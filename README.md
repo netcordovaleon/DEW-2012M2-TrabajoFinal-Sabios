@@ -5,6 +5,6 @@ URL Vitacora : https://docs.google.com/spreadsheet/ccc?key=0AhxMB-Z5zdepdHd2aGE2
 URL Scrummy  : http://scrumy.com/EPE-Proyecto-Sabios
 
 Integrantes del Curso (Por el momento somos 3):
-Cordova Leon Luis Alex (Scrum master temporal)
-Eder Rafo Jose
-Marco Garoz
+Luis Alex Cordova Leon (Scrum master temporal)
+Eder Rafo Jose Pariona Espiñal 
+Marco Garcia
