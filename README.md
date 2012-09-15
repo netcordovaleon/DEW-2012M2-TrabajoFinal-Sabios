@@ -7,4 +7,4 @@ URL Scrummy  : http://scrumy.com/EPE-Proyecto-Sabios
 Integrantes del Curso (Por el momento somos 3):
 Luis Alex Cordova Leon (Scrum master temporal)
 Eder Rafo Jose Pariona Espiñal 
-Marco Garcia
+Marco Garcia Quiroz
