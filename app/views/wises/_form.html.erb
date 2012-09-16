@@ -1,0 +1,41 @@
+<%= form_for(@wise) do |f| %>
+  <% if @wise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wise.errors.count, "error") %> prohibited this wise from being saved:</h2>
+
+      <ul>
+      <% @wise.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :apellation %><br />
+    <%= f.text_field :apellation %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br />
+    <%= f.text_area :summary %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :bank %><br />
+    <%= f.text_field :bank %>
+  </div>
+  <div class="field">
+    <%= f.label :banck_account %><br />
+    <%= f.text_field :banck_account %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

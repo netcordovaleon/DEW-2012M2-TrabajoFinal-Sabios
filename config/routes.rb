@@ -1,4 +1,10 @@
 DewFinal::Application.routes.draw do
+  resources :entrepreneurs
+
+  resources :wises
+
+  resources :users
+
   resources :categories
 
   # The priority is based upon order of creation:

@@ -1,0 +1,33 @@
+<h1>Listing wises</h1>
+
+<table>
+  <tr>
+    <th>Apellation</th>
+    <th>Summary</th>
+    <th>Website</th>
+    <th>Bank</th>
+    <th>Banck account</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wises.each do |wise| %>
+  <tr>
+    <td><%= wise.apellation %></td>
+    <td><%= wise.summary %></td>
+    <td><%= wise.website %></td>
+    <td><%= wise.bank %></td>
+    <td><%= wise.banck_account %></td>
+    <td><%= wise.user %></td>
+    <td><%= link_to 'Show', wise %></td>
+    <td><%= link_to 'Edit', edit_wise_path(wise) %></td>
+    <td><%= link_to 'Destroy', wise, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wise', new_wise_path %>

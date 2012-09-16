@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120916171105) do
+ActiveRecord::Schema.define(:version => 20120916182714) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -19,5 +18,42 @@ ActiveRecord::Schema.define(:version => 20120916171105) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "entrepreneurs", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "entrepreneurs", ["user_id"], :name => "index_entrepreneurs_on_user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "sexo"
+    t.string   "document_type"
+    t.string   "document_number"
+    t.string   "email"
+    t.string   "cellular"
+    t.string   "addres"
+    t.string   "birth_date"
+    t.string   "password"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "wises", :force => true do |t|
+    t.string   "apellation"
+    t.text     "summary"
+    t.string   "website"
+    t.string   "bank"
+    t.string   "banck_account"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "wises", ["user_id"], :name => "index_wises_on_user_id"
 
 end
