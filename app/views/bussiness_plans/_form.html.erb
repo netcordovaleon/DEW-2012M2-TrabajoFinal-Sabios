@@ -1,0 +1,49 @@
+<%= form_for(@bussiness_plan) do |f| %>
+  <% if @bussiness_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bussiness_plan.errors.count, "error") %> prohibited this bussiness_plan from being saved:</h2>
+
+      <ul>
+      <% @bussiness_plan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :vision %><br />
+    <%= f.text_area :vision %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br />
+    <%= f.text_area :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :runtime %><br />
+    <%= f.number_field :runtime %>
+  </div>
+  <div class="field">
+    <%= f.label :total_investment %><br />
+    <%= f.number_field :total_investment %>
+  </div>
+  <div class="field">
+    <%= f.label :net_margin %><br />
+    <%= f.number_field :net_margin %>
+  </div>
+  <div class="field">
+    <%= f.label :roi %><br />
+    <%= f.text_field :roi %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

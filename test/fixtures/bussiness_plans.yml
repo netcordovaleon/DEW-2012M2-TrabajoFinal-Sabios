@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  vision: MyText
+  reason: MyText
+  runtime: 1
+  total_investment: 1
+  net_margin: 1
+  roi: MyString
+  category: 
+
+two:
+  title: MyString
+  vision: MyText
+  reason: MyText
+  runtime: 1
+  total_investment: 1
+  net_margin: 1
+  roi: MyString
+  category: 

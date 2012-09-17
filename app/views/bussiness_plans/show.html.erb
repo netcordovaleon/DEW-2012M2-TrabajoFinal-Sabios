@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @bussiness_plan.title %>
+</p>
+
+<p>
+  <b>Vision:</b>
+  <%= @bussiness_plan.vision %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @bussiness_plan.reason %>
+</p>
+
+<p>
+  <b>Runtime:</b>
+  <%= @bussiness_plan.runtime %>
+</p>
+
+<p>
+  <b>Total investment:</b>
+  <%= @bussiness_plan.total_investment %>
+</p>
+
+<p>
+  <b>Net margin:</b>
+  <%= @bussiness_plan.net_margin %>
+</p>
+
+<p>
+  <b>Roi:</b>
+  <%= @bussiness_plan.roi %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @bussiness_plan.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_bussiness_plan_path(@bussiness_plan) %> |
+<%= link_to 'Back', bussiness_plans_path %>
