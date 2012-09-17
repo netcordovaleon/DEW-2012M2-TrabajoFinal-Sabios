@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120916182714) do
+ActiveRecord::Schema.define(:version => 20120917032126) do
+
+  create_table "bussiness_plans", :force => true do |t|
+    t.string   "title"
+    t.text     "vision"
+    t.text     "reason"
+    t.integer  "runtime"
+    t.integer  "total_investment"
+    t.integer  "net_margin"
+    t.string   "roi"
+    t.integer  "category_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "bussiness_plans", ["category_id"], :name => "index_bussiness_plans_on_category_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"

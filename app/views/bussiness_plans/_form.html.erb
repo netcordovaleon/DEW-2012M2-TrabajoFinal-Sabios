@@ -16,11 +16,11 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :vision %><br />
+    <%= f.label :business_vision %><br />
     <%= f.text_area :vision %>
   </div>
   <div class="field">
-    <%= f.label :reason %><br />
+    <%= f.label :reasoning_leading_to_the_goodness_of_the_proposal %><br />
     <%= f.text_area :reason %>
   </div>
   <div class="field">
@@ -41,9 +41,10 @@
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.text_field :category %>
+	<%= f.collection_select :category_id, Category.all, :id, :name, :prompt => true %>
+    <!--<%= f.text_field :category %>-->
   </div>
-  <div class="actions">
+   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
