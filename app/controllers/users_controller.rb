@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -37,9 +38,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
   # POST /users
   # POST /users.json
   def create
+    abort("user die");
     @user = User.new(params[:user])
 
     respond_to do |format|

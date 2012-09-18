@@ -39,9 +39,29 @@ class WisesController < ApplicationController
 
   # POST /wises
   # POST /wises.json
+  # POST /users
+  # POST /users.json
   def create
-    @wise = Wise.new(params[:wise])
-
+  #ederrafo seteo como nuevo
+  @user = User.new(params[:user])
+#"wise"=>{"website"=>"qq",
+# "apellation"=>"narizon nuevo",
+# "banck_account"=>"qqq0",
+# "bank"=>"qqqq",
+# "summary"=>"sumarrrrrrrry"},
+  if @user.save
+  #@wise = Wise.new(:website=>"qq",
+  #                :apellation=>"medicos",
+  #                :banck_account=>"ellos",
+  #                :bank=>"casa BCPqqq",
+  #                :user_id =>@user.id,
+  #                :summary=>"ssasasasaasd sdadasd asdumarrrrrrrry")
+  @wise = Wise.new(:website => params[:wise][:website],
+                  :apellation => params[:wise][:apellation],
+                  :banck_account => params[:wise][:banck_account],
+                  :bank => params[:wise][:bank],
+                  :user_id => @user.id,
+                  :summary => params[:wise][:summary])
     respond_to do |format|
       if @wise.save
         format.html { redirect_to @wise, :notice => 'Wise was successfully created.' }
@@ -51,6 +71,15 @@ class WisesController < ApplicationController
         format.json { render :json => @wise.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+    #@user = User.new
+    #@wise = Wise.new(params[:wise])
+ 
+ # Wise.new(:appellation => "cabezon")
+
+  #  abort("xxx");
+
   end
 
   # PUT /wises/1
