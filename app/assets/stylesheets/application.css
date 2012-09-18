@@ -11,3 +11,106 @@
  *= require_self
  *= require_tree .
  */
+
+h1 {
+    font-size:30px;    
+    font-family:Arial;
+    color: #0B0B61;
+    text-align:left;
+    width:100%;
+    padding:7px 7px 7px 7px;
+    border-bottom:2px solid #000000;
+}
+
+.grilla {
+    padding:0;
+    border-collapse:collapse;
+}
+
+
+.grilla th {
+	height:30px;
+	background:url('fondo.gif') center;
+	/*background:red;*/
+	color:#FFFFFF;
+}
+
+.grilla td {
+	height:30px;
+	color:#000000;
+	font-family:Arial;
+	border-bottom:1px solid black;
+}
+
+a {
+    width:auto;
+    float:left;
+    background: url('fondo.gif') 0 -3px repeat-x;
+    color:#fff !important;
+    text-transform:none;
+    text-decoration:none;
+    padding:7px 10px 8px 10px;
+    text-shadow:0px -1px #278db8;
+    border:1px solid #339cdf;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    margin:0 12px 0 0;
+    cursor:pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+}
+
+input[type="text"], input[type="password"], select, textarea {
+    border:1px solid #4A9DE8;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    font-family:Verdana;
+    font-size:11px;
+    box-shadow:inset 0px 1px 2px #bbb;
+    -webkit-box-shadow:inset 0px 1px 2px #bbb;
+    -moz-box-shadow:inset 0px 1px 2px #bbb;
+}
+input[type="text"], input[type="password"], select
+{
+    height:23px;
+}
+
+.label-text {
+    width:200px;
+    font-size:13px;
+    font-family:Arial;
+    color:#0B0B61;
+    font-weight:bold;
+}
+
+.label-result {
+    width:200px;
+    font-size:14px;
+    font-family:Arial;
+    color:#000000;
+    text-transform:uppercase;
+}
+
+fieldset {
+	border:1px solid #A4A4A4;
+}
+
+input[type="button"], input[type="submit"] {
+    width:auto;
+    float:left;
+    background: url('fondo.gif') 0 -3px repeat-x;
+    color:#fff;
+    padding:7px 10px 8px 10px;
+    text-shadow:0px -1px #278db8;
+    border:1px solid #339cdf;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    margin:0 12px 0 0;
+    cursor:pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+}
