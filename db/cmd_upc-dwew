@@ -1,0 +1,14 @@
+insert into entrepreneurs (user_id,created_at,updated_at)values(1,date(),date())
+
+--users
+insert into users (name,firstname,lastname,sexo,document_type,document_number,email,cellular,addres,birth_date,password,created_at,updated_at)
+values ("eder","rafo","pariona-espiñal","M","DNI","43466537","ederrafo@gmail.com",1231233,"limka","22-03-1986","123abc",date(),date())
+
+insert into users (name,firstname,lastname,sexo,document_type,document_number,email,cellular,addres,birth_date,password,created_at,updated_at)
+values ("oliver","rafo","pariona-espiñal","M","DNI","43466537","oliverrafo@gmail.com",1231233,"vmt","15-12-2008","aaaaaa",date(),date())
+
+--wises
+insert into wises(apellation,summary,website,bank,banck_account,user_id,created_at,updated_at)
+values("cabezoncito","el bebe de la casa","www.oliverrafo.com","BCP","213213123213",2,date(),date())
+
+
