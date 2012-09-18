@@ -35,6 +35,7 @@ class WisesController < ApplicationController
   # GET /wises/1/edit
   def edit
     @wise = Wise.find(params[:id])
+    @user =User.find(@wise.user_id)
   end
 
   # POST /wises
@@ -86,7 +87,7 @@ class WisesController < ApplicationController
   # PUT /wises/1.json
   def update
     @wise = Wise.find(params[:id])
-
+    
     respond_to do |format|
       if @wise.update_attributes(params[:wise])
         format.html { redirect_to @wise, :notice => 'Wise was successfully updated.' }

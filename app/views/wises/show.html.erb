@@ -1,11 +1,41 @@
-
-
-# in view
-
-<%= debug(@variable) %>
-
 <p id="notice"><%= notice %></p>
 
+  <p>
+    <b>Name:</b>
+    <%= @wise.user.name %>
+  </p>
+
+  <p>
+    <b>Firstname</b>
+    <%= @wise.user.firstname %>
+  </p>
+  <p>
+    <b>Lastname</b>
+    <%= @wise.user.lastname %>
+  </p>    
+  <p>
+    <b>Sexo</b>
+    <%= @wise.user.sexo %>
+  </p>
+  <p>
+    <b>Document Type</b>
+    <%= @wise.user.document_type %>
+  </p>
+  <p>
+    <b>Document Number</b>
+    <%= @wise.user.document_number %></p>
+  <p>
+    <b>Email</b>
+    <%= @wise.user.email %></p>
+  <p>
+    <b>Cellular</b>
+    <%= @wise.user.cellular %></p>
+  <p>
+    <b>Addres</b>
+    <%= @wise.user.addres %></p>
+  <p>
+    <b>Birth Date</b>
+    <%= @wise.user.birth_date %></p>
 <p>
   <b>Apellation:</b>
   <%= @wise.apellation %>
@@ -31,11 +61,7 @@
   <%= @wise.banck_account %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @wise.user %>
-</p>
-
-
 <%= link_to 'Edit', edit_wise_path(@wise) %> |
 <%= link_to 'Back', wises_path %>
+
+
