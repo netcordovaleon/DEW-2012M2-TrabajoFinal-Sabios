@@ -87,7 +87,9 @@ class WisesController < ApplicationController
   # PUT /wises/1.json
   def update
     @wise = Wise.find(params[:id])
-    
+    @user = User.find(@wise.user_id)
+    #abort(@user.name)
+ if @user.update_attributes(params[:user]) 
     respond_to do |format|
       if @wise.update_attributes(params[:wise])
         format.html { redirect_to @wise, :notice => 'Wise was successfully updated.' }
@@ -96,7 +98,9 @@ class WisesController < ApplicationController
         format.html { render :action => "edit" }
         format.json { render :json => @wise.errors, :status => :unprocessable_entity }
       end
-    end
+    end  
+end
+
   end
 
   # DELETE /wises/1
