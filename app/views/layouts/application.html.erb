@@ -3,9 +3,13 @@
 <head>
   <title>Proyecto parcial de DEW</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "start/jquery-ui-1.8.23.custom", :media => "all" %>
+  <%= javascript_include_tag "jquery-1.8.0.min" %>
+  <%= javascript_include_tag "jquery-ui-1.8.23.custom.min" %>
   <%= javascript_include_tag "application" %>
-  
   <%= csrf_meta_tags %>
+
+
 </head>
 <body>
 <table id="banner">
@@ -39,4 +43,5 @@
 	</div>
 </div>
 </body>
+  <%= javascript_include_tag "application" %>
 </html>

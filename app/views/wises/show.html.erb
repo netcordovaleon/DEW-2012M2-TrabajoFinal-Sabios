@@ -1,30 +1,33 @@
 <p id="notice"><%= notice %></p>
 <fieldset style="width:600px;">             
-    <legend>Informacion del Sabio <b class="label-result"><%= @wise.user.name %></b></legend>
-
+    <legend>Informacion del Sabio </legend>
   <p>
-    <b class="label-text">Firstname</b>
-    <b><%= @wise.user.firstname %></b>
+  <b class="label-text">Name:</b>
+  <%= @wise.user.name %>
   </p>
   <p>
-    <b class="label-text">Lastname</b>
-    <b><%= @wise.user.lastname %></b>
+    <b class="label-text">Firstname:</b>
+    <%= @wise.user.firstname %>
+  </p>
+  <p>
+    <b class="label-text">Lastname:</b>
+    <%= @wise.user.lastname %>
   </p>    
   <p>
-    <b class="label-text">Sexo</b>
-    <b><%= @wise.user.sexo %></b>
+    <b class="label-text">Sexo:</b>
+    <%= @wise.user.sexo %>
   </p>
   <p>
-    <b class="label-text">Document Type</b>
-    <b><%= @wise.user.document_type %></b>
+    <b class="label-text" >Document Type:</b>
+    <%= @wise.user.document_type %>
   </p>
   <p>
-    <b class="label-text">Document Number</b>
-    <b class="label-result"><%= @wise.user.document_number %></b>
+    <b class="label-text">Document Number:</b>
+     <%= @wise.user.document_number %>
   </p>
   <p>
-    <b class="label-text">Email</b>
-    <b class="label-result"><%= @wise.user.email %></b>
+    <b class="label-text">Email:</b>
+    <%= @wise.user.email %>
   </p>
   <p>
     <b class="label-text">Cellular</b>
