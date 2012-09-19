@@ -1,4 +1,6 @@
 DewFinal::Application.routes.draw do
+  resources :bussiness_plans
+
   resources :entrepreneurs
 
   resources :wises

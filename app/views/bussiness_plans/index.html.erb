@@ -1,0 +1,37 @@
+<h1>Bussiness plans</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Vision</th>
+    <th>Reason</th>
+    <th>Runtime</th>
+    <th>Total investment</th>
+    <th>Net margin</th>
+    <th>Roi</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bussiness_plans.each do |bussiness_plan| %>
+  <tr>
+    <td><%= bussiness_plan.title %></td>
+    <td><%= bussiness_plan.vision %></td>
+    <td><%= bussiness_plan.reason %></td>
+    <td><%= bussiness_plan.runtime %></td>
+    <td><%= bussiness_plan.total_investment %></td>
+    <td><%= bussiness_plan.net_margin %></td>
+    <td><%= bussiness_plan.roi %></td>
+    <td><%= bussiness_plan.category %></td>
+    <td><%= link_to 'Show', bussiness_plan %></td>
+    <td><%= link_to 'Edit', edit_bussiness_plan_path(bussiness_plan) %></td>
+    <td><%= link_to 'Destroy', bussiness_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bussiness plan', new_bussiness_plan_path %>
