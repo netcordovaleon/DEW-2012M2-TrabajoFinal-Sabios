@@ -1,65 +1,66 @@
 <p id="notice"><%= notice %></p>
+<fieldset style="width:600px;">             
+    <legend>Informacion del Sabio <b class="label-result"><%= @wise.user.name %></b></legend>
 
   <p>
-    <b>Name:</b>
-    <%= @wise.user.name %>
-  </p>
-
-  <p>
-    <b>Firstname</b>
-    <%= @wise.user.firstname %>
+    <b class="label-text">Firstname</b>
+    <b><%= @wise.user.firstname %></b>
   </p>
   <p>
-    <b>Lastname</b>
-    <%= @wise.user.lastname %>
+    <b class="label-text">Lastname</b>
+    <b><%= @wise.user.lastname %></b>
   </p>    
   <p>
-    <b>Sexo</b>
-    <%= @wise.user.sexo %>
+    <b class="label-text">Sexo</b>
+    <b><%= @wise.user.sexo %></b>
   </p>
   <p>
-    <b>Document Type</b>
-    <%= @wise.user.document_type %>
+    <b class="label-text">Document Type</b>
+    <b><%= @wise.user.document_type %></b>
   </p>
   <p>
-    <b>Document Number</b>
-    <%= @wise.user.document_number %></p>
+    <b class="label-text">Document Number</b>
+    <b class="label-result"><%= @wise.user.document_number %></b>
+  </p>
   <p>
-    <b>Email</b>
-    <%= @wise.user.email %></p>
+    <b class="label-text">Email</b>
+    <b class="label-result"><%= @wise.user.email %></b>
+  </p>
   <p>
-    <b>Cellular</b>
+    <b class="label-text">Cellular</b>
     <%= @wise.user.cellular %></p>
   <p>
-    <b>Addres</b>
+    <b class="label-text">Addres</b>
     <%= @wise.user.addres %></p>
   <p>
-    <b>Birth Date</b>
+    <b class="label-text">Birth Date</b>
     <%= @wise.user.birth_date %></p>
 <p>
-  <b>Apellation:</b>
+  <b class="label-text">Apellation:</b>
   <%= @wise.apellation %>
 </p>
 
 <p>
-  <b>Summary:</b>
+  <b class="label-text">Summary:</b>
   <%= @wise.summary %>
 </p>
 
 <p>
-  <b>Website:</b>
+  <b class="label-text">Website:</b>
   <%= @wise.website %>
 </p>
 
 <p>
-  <b>Bank:</b>
+  <b class="label-text">Bank:</b>
   <%= @wise.bank %>
 </p>
 
 <p>
-  <b>Banck account:</b>
+  <b class="label-text">Banck account:</b>
   <%= @wise.banck_account %>
 </p>
+</fieldset>    
+  
 
 <%= link_to 'Edit', edit_wise_path(@wise) %> |
 <%= link_to 'Back', wises_path %>

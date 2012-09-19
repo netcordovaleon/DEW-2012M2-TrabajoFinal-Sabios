@@ -13,15 +13,15 @@
 
   <%= fields_for :user do |ede| %><br />
     <div class="field">
-    <%= ede.label :name %>
+    <%= ede.label :name %><br />
     <%= ede.text_field :name %>
     </div>
     <div class="field">
-    <%= ede.label :firstname %>
+    <%= ede.label :firstname %><br />
     <%= ede.text_field :firstname %>
     </div>
     <div class="field">
-    <%= ede.label :lastname %>
+    <%= ede.label :lastname %><br />
     <%= ede.text_field :lastname %>
     </div>
     <div class="field">
@@ -77,11 +77,7 @@
     <%= f.label :banck_account %><br />
     <%= f.text_field :banck_account %>
   </div>
-
-  <%= debug(:user) %>
-
-
-
+  <!--<%= debug(:user) %>-->
   <div class="actions">
     <%= f.submit %>
   </div>
