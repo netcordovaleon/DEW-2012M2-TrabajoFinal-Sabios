@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DewFinal</title>
+  <title>Proyecto parcial de DEW</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<table id="banner">
+	<tr>
+		<td class="fondo">
+		 &nbsp;
+		</td>
+	</tr>
+</table>
+<div id="menu">
+    <ul class="menu">
+        <li><a href="#" onclick="javascript:alert('sin funcionalidad');" class="parent"><span>Pagina principal</span></a></li>
+        <li><a href="#" class="parent"><span>Mantenimiento</span></a>
+            <ul>
+                <li><a href="/categories"><span>Categoria</span></a></li>
+                <li><a href="/bussiness_plans"><span>Planes de Negocio</span></a></li>
+				<li><a href="/entrepreneurs"><span>Emprendedores</span></a></li>
+				<li><a href="/wises"><span>Sabios</span></a></li>
+                <li><a href="/users"><span>Usuario</span></a></li>
+            </ul>
+        </li>
+        <li class="last"><a href="#" onclick="javascript:alert('sin funcionalidad');"><span>Salir</span></a></li>
+    </ul>
+</div>
+<div id="formularios" style="min-height:600px;">
+	<%= yield %>
+</div>
+<div id="footer">
+	<div id="footer_text">Copyright 2012 - Todos los derechos reservados.<br />
+	Desarrollado por los alumnos de UPC-EPE
+	</div>
+</div>
 </body>
 </html>
