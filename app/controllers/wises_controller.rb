@@ -45,18 +45,7 @@ class WisesController < ApplicationController
   def create
   #ederrafo seteo como nuevo
   @user = User.new(params[:user])
-#"wise"=>{"website"=>"qq",
-# "apellation"=>"narizon nuevo",
-# "banck_account"=>"qqq0",
-# "bank"=>"qqqq",
-# "summary"=>"sumarrrrrrrry"},
   if @user.save
-  #@wise = Wise.new(:website=>"qq",
-  #                :apellation=>"medicos",
-  #                :banck_account=>"ellos",
-  #                :bank=>"casa BCPqqq",
-  #                :user_id =>@user.id,
-  #                :summary=>"ssasasasaasd sdadasd asdumarrrrrrrry")
   @wise = Wise.new(:website => params[:wise][:website],
                   :apellation => params[:wise][:apellation],
                   :banck_account => params[:wise][:banck_account],
@@ -108,7 +97,9 @@ end
   def destroy
     @wise = Wise.find(params[:id])
     @wise.destroy
-
+    @user = User.find(@wise.user_id)
+    @user.destroy
+ 
     respond_to do |format|
       format.html { redirect_to wises_url }
       format.json { head :no_content }

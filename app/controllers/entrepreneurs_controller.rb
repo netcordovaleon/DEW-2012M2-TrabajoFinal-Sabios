@@ -35,13 +35,18 @@ class EntrepreneursController < ApplicationController
   # GET /entrepreneurs/1/edit
   def edit
     @entrepreneur = Entrepreneur.find(params[:id])
+    @user =User.find(@entrepreneur.user_id)
   end
 
   # POST /entrepreneurs
   # POST /entrepreneurs.json
   def create
-    @entrepreneur = Entrepreneur.new(params[:entrepreneur])
-
+  #@entrepreneur = Entrepreneur.new(params[:entrepreneur])
+  #grabo en user  
+  @user = User.new(params[:user])
+  
+  if @user.save
+  @entrepreneur = Entrepreneur.new(:user_id => @user.id)
     respond_to do |format|
       if @entrepreneur.save
         format.html { redirect_to @entrepreneur, :notice => 'Entrepreneur was successfully created.' }
@@ -52,6 +57,8 @@ class EntrepreneursController < ApplicationController
       end
     end
   end
+
+   end
 
   # PUT /entrepreneurs/1
   # PUT /entrepreneurs/1.json
