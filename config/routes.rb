@@ -8,6 +8,8 @@ DewFinal::Application.routes.draw do
   resources :users
 
   resources :categories
+  
+  root :to => "bussiness_plans#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
