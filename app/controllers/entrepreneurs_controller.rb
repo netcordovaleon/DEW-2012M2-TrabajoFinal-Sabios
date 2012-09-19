@@ -64,7 +64,9 @@ class EntrepreneursController < ApplicationController
   # PUT /entrepreneurs/1.json
   def update
     @entrepreneur = Entrepreneur.find(params[:id])
+    @user = User.find(@entrepreneur.user_id)
 
+   if @user.update_attributes(params[:user])  
     respond_to do |format|
       if @entrepreneur.update_attributes(params[:entrepreneur])
         format.html { redirect_to @entrepreneur, :notice => 'Entrepreneur was successfully updated.' }
@@ -74,14 +76,17 @@ class EntrepreneursController < ApplicationController
         format.json { render :json => @entrepreneur.errors, :status => :unprocessable_entity }
       end
     end
+   end
   end
 
   # DELETE /entrepreneurs/1
   # DELETE /entrepreneurs/1.json
   def destroy
     @entrepreneur = Entrepreneur.find(params[:id])
+    @user = User.find(@entrepreneur.user_id)
     @entrepreneur.destroy
-
+    @user.destroy
+ 
     respond_to do |format|
       format.html { redirect_to entrepreneurs_url }
       format.json { head :no_content }
