@@ -1,6 +1,6 @@
 <h1>Bussiness plans</h1>
 
-<table>
+<table class="grilla">
   <tr>
     <th>Title</th>
     <th>Vision</th>
@@ -24,7 +24,7 @@
     <td><%= bussiness_plan.total_investment %></td>
     <td><%= bussiness_plan.net_margin %></td>
     <td><%= bussiness_plan.roi %></td>
-    <td><%= bussiness_plan.category %></td>
+    <td><%= bussiness_plan.category.name %></td>
     <td><%= link_to 'Show', bussiness_plan %></td>
     <td><%= link_to 'Edit', edit_bussiness_plan_path(bussiness_plan) %></td>
     <td><%= link_to 'Destroy', bussiness_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
