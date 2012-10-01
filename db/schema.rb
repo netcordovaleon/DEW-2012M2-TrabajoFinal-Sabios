@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120917032126) do
+ActiveRecord::Schema.define(:version => 20121001164724) do
 
   create_table "bussiness_plans", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120917032126) do
     t.integer  "category_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "status"
   end
 
   add_index "bussiness_plans", ["category_id"], :name => "index_bussiness_plans_on_category_id"
@@ -31,8 +32,9 @@ ActiveRecord::Schema.define(:version => 20120917032126) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "pcategory_id"
   end
 
   create_table "entrepreneurs", :force => true do |t|
@@ -42,6 +44,13 @@ ActiveRecord::Schema.define(:version => 20120917032126) do
   end
 
   add_index "entrepreneurs", ["user_id"], :name => "index_entrepreneurs_on_user_id"
+
+  create_table "pcategories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

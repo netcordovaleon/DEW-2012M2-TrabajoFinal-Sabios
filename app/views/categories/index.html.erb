@@ -1,7 +1,8 @@
-<h1>Listado de Categoria</h1>
+<h1>Listado de Sub-categoria</h1>
 
-<table class="grilla" style="width:700px;">
+<table class="grilla" style="width:800px;">
   <tr>
+    <th>Categoria Principal</th>
     <th>Nombre</th>
     <th>Descripcion</th>
     <th></th>
@@ -11,6 +12,7 @@
 
 <% @categories.each do |category| %>
   <tr>
+    <td><%= category.pcategory.name %></td>
     <td><%= category.name %></td>
     <td><%= category.description %></td>
     <td><%= link_to 'Ver', category %></td>
