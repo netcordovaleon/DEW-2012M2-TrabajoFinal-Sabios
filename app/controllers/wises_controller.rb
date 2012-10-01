@@ -25,7 +25,8 @@ class WisesController < ApplicationController
   # GET /wises/new.json
   def new
     @wise = Wise.new
-
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @wise }
@@ -36,6 +37,8 @@ class WisesController < ApplicationController
   def edit
     @wise = Wise.find(params[:id])
     @user =User.find(@wise.user_id)
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
   end
 
   # POST /wises
@@ -62,14 +65,6 @@ class WisesController < ApplicationController
       end
     end
   end
-  
-    #@user = User.new
-    #@wise = Wise.new(params[:wise])
- 
- # Wise.new(:appellation => "cabezon")
-
-  #  abort("xxx");
-
   end
 
   # PUT /wises/1

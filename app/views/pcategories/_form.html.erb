@@ -1,0 +1,25 @@
+<%= form_for(@pcategory) do |f| %>
+  <% if @pcategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pcategory.errors.count, "error") %> prohibited this pcategory from being saved:</h2>
+
+      <ul>
+      <% @pcategory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Descripcion %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit :value => "Grabar" %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<h1>Monitoreo de planes de negocio</h1>
+
+<table class="grilla" style="width:100%;">
+  <tr>
+    <th>Titulo</th>
+    <th>Vision</th>
+    <th>Razonamiento</th>
+    <th>Tiempo de ejecucion</th>
+    <th>Inversion</th>
+    <th>Margen</th>
+    <th>ROI</th>
+    <th>Estado</th>
+  </tr>
+
+<% @bussiness_plans.each do |bussiness_plan| %>
+  <tr>
+    <td><%= bussiness_plan.title %></td>
+    <td><%= bussiness_plan.vision %></td>
+    <td><%= bussiness_plan.reason %></td>
+    <td>Nro Meses: <%= bussiness_plan.runtime %></td>
+    <td>S/.&nbsp;&nbsp;<%= bussiness_plan.total_investment %></td>
+    <td>S/.&nbsp;&nbsp;<%= bussiness_plan.net_margin %></td>
+    <td>S/.&nbsp;&nbsp;<%= bussiness_plan.roi %></td>
+    <td>
+	<% if (bussiness_plan.status == "Iniciado") %>
+		<img src="../assets/icon_check.png" style="width:40px;heigth:40px;" />
+	<% end %>
+    </td>
+  </tr>
+<% end %>
+</table>

@@ -12,25 +12,29 @@
   <% end %>
 <%= fields_for :user do |ede| %><br />
     <div class="field">
-    <%= ede.label :name %>
+    <%= ede.label :name %><br />
     <%= ede.text_field :name %>
     </div>
     <div class="field">
-    <%= ede.label :firstname %>
+    <%= ede.label :firstname %><br />
     <%= ede.text_field :firstname %>
     </div>
     <div class="field">
-    <%= ede.label :lastname %>
+    <%= ede.label :lastname %><br />
     <%= ede.text_field :lastname %>
     </div>
+
     <div class="field">
     <%= ede.label :sexo %><br />
-    <%= ede.text_field :sexo %>
+    <!-- <%= ede.text_field :sexo %> -->
+    <%= ede.select :sexo, @arregloSexo, :prompt => 'Select ...' %>
     </div>
     <div class="field">
     <%= ede.label :document_type %><br />
-    <%= ede.text_field :document_type %>
+    <!--<%= ede.text_field :document_type %>-->
+    <%= ede.select :document_type, @arregloTypeDoc, :prompt => 'Select ...' %>
     </div>
+
     <div class="field">
     <%= ede.label :document_number %><br />
     <%= ede.text_field :document_number %>
@@ -53,7 +57,7 @@
     </div>
     <div class="field">
     <%= ede.label :password %><br />
-    <%= ede.text_field :password %>
+    <%= ede.password_field :password %>
     </div>
   <% end %>
 

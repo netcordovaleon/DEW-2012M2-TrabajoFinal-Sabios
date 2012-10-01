@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Titulo del proyecto:</b>
   <%= @bussiness_plan.title %>
 </p>
 
 <p>
-  <b>Vision:</b>
+  <b>Vision del plan:</b>
   <%= @bussiness_plan.vision %>
 </p>
 
 <p>
-  <b>Reason:</b>
+  <b>Razonamiento:</b>
   <%= @bussiness_plan.reason %>
 </p>
 
 <p>
-  <b>Runtime:</b>
+  <b>Tiempo de ejecucion:</b>
   <%= @bussiness_plan.runtime %>
 </p>
 
 <p>
-  <b>Total investment:</b>
+  <b>Total de inversion:</b>
   <%= @bussiness_plan.total_investment %>
 </p>
 
@@ -36,10 +36,14 @@
 </p>
 
 <p>
-  <b>Category:</b>
-  <%= @bussiness_plan.category %>
+  <b>Categoria:</b>
+  <%= @bussiness_plan.category.name %>
+</p>
+<p>
+  <b>Estado del proyecto:</b>
+  <%= @bussiness_plan.status %>
 </p>
 
 
-<%= link_to 'Edit', edit_bussiness_plan_path(@bussiness_plan) %> |
-<%= link_to 'Back', bussiness_plans_path %>
+<%= link_to 'Editar', edit_bussiness_plan_path(@bussiness_plan) %>
+<%= link_to 'Regresar', bussiness_plans_path %>

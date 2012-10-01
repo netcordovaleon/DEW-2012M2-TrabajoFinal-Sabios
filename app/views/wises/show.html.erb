@@ -1,65 +1,69 @@
 <p id="notice"><%= notice %></p>
-
+<fieldset style="width:600px;">             
+    <legend>Informacion del Sabio </legend>
   <p>
-    <b>Name:</b>
-    <%= @wise.user.name %>
+  <b class="label-text">Name:</b>
+  <%= @wise.user.name %>
   </p>
-
   <p>
-    <b>Firstname</b>
+    <b class="label-text">Firstname:</b>
     <%= @wise.user.firstname %>
   </p>
   <p>
-    <b>Lastname</b>
+    <b class="label-text">Lastname:</b>
     <%= @wise.user.lastname %>
   </p>    
   <p>
-    <b>Sexo</b>
+    <b class="label-text">Sexo:</b>
     <%= @wise.user.sexo %>
   </p>
   <p>
-    <b>Document Type</b>
+    <b class="label-text" >Document Type:</b>
     <%= @wise.user.document_type %>
   </p>
   <p>
-    <b>Document Number</b>
-    <%= @wise.user.document_number %></p>
+    <b class="label-text">Document Number:</b>
+     <%= @wise.user.document_number %>
+  </p>
   <p>
-    <b>Email</b>
-    <%= @wise.user.email %></p>
+    <b class="label-text">Email:</b>
+    <%= @wise.user.email %>
+  </p>
   <p>
-    <b>Cellular</b>
+    <b class="label-text">Cellular</b>
     <%= @wise.user.cellular %></p>
   <p>
-    <b>Addres</b>
+    <b class="label-text">Addres</b>
     <%= @wise.user.addres %></p>
   <p>
-    <b>Birth Date</b>
+    <b class="label-text">Birth Date</b>
     <%= @wise.user.birth_date %></p>
 <p>
-  <b>Apellation:</b>
+  <b class="label-text">Apellation:</b>
   <%= @wise.apellation %>
 </p>
 
 <p>
-  <b>Summary:</b>
+  <b class="label-text">Summary:</b>
   <%= @wise.summary %>
 </p>
 
 <p>
-  <b>Website:</b>
+  <b class="label-text">Website:</b>
   <%= @wise.website %>
 </p>
 
 <p>
-  <b>Bank:</b>
+  <b class="label-text">Bank:</b>
   <%= @wise.bank %>
 </p>
 
 <p>
-  <b>Banck account:</b>
+  <b class="label-text">Banck account:</b>
   <%= @wise.banck_account %>
 </p>
+</fieldset>    
+  
 
 <%= link_to 'Edit', edit_wise_path(@wise) %> |
 <%= link_to 'Back', wises_path %>

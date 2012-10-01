@@ -1,48 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>User:</b>
-  <%= @entrepreneur.user %>
-</p>
-
-
-<p>
-    <b>Name:</b>
+<fieldset style="width:600px;">             
+    <legend>Informacion del Emprendedor</legend>
+  <p>
+    <b class="label-text" >Name:</b>
     <%= @entrepreneur.user.name %>
   </p>
 
   <p>
-    <b>Firstname</b>
+    <b class="label-text">Firstname:</b>
     <%= @entrepreneur.user.firstname %>
   </p>
   <p>
-    <b>Lastname</b>
+    <b class="label-text">Lastname:</b>
     <%= @entrepreneur.user.lastname %>
   </p>    
   <p>
-    <b>Sexo</b>
+    <b class="label-text">Sexo:</b>
     <%= @entrepreneur.user.sexo %>
   </p>
   <p>
-    <b>Document Type</b>
+    <b class="label-text">Document Type:</b>
     <%= @entrepreneur.user.document_type %>
   </p>
   <p>
-    <b>Document Number</b>
+    <b class="label-text">Document Number:</b>
     <%= @entrepreneur.user.document_number %></p>
   <p>
-    <b>Email</b>
+    <b class="label-text">Email:</b>
     <%= @entrepreneur.user.email %></p>
   <p>
-    <b>Cellular</b>
+    <b class="label-text">Cellular:</b>
     <%= @entrepreneur.user.cellular %></p>
   <p>
-    <b>Addres</b>
+    <b class="label-text">Addres:</b>
     <%= @entrepreneur.user.addres %></p>
   <p>
-    <b>Birth Date</b>
+    <b class="label-text">Birth Date:</b>
     <%= @entrepreneur.user.birth_date %></p>
+</fieldset>
 
-
-<%= link_to 'Edit', edit_entrepreneur_path(@entrepreneur) %> |
-<%= link_to 'Back', entrepreneurs_path %>
+<%= link_to 'Editar', edit_entrepreneur_path(@entrepreneur) %> |
+<%= link_to 'Atras', entrepreneurs_path %>

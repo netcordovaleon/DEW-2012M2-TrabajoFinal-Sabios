@@ -1,6 +1,7 @@
 class BussinessPlansController < ApplicationController
   # GET /bussiness_plans
   # GET /bussiness_plans.json
+  
   def index
     @bussiness_plans = BussinessPlan.all
 

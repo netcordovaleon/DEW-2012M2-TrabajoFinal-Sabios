@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//alert("detalles");
+$(function(){
+    //$( ".selector" ).datepicker({ disabled: true });
+	$("#user_birth_date").datepicker(
+		{ autoSize:true }
+    ).attr('readonly','readonly');   
+
+});

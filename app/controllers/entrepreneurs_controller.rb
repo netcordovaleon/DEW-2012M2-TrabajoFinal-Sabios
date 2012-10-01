@@ -25,7 +25,8 @@ class EntrepreneursController < ApplicationController
   # GET /entrepreneurs/new.json
   def new
     @entrepreneur = Entrepreneur.new
-
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @entrepreneur }
@@ -36,6 +37,8 @@ class EntrepreneursController < ApplicationController
   def edit
     @entrepreneur = Entrepreneur.find(params[:id])
     @user =User.find(@entrepreneur.user_id)
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
   end
 
   # POST /entrepreneurs
