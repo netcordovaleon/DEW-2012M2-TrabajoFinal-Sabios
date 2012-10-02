@@ -12,13 +12,15 @@
   <% end %>
 
 
-
+<p><b>Wise :</b><%= @user.name %></p>
+<%= hidden_field(:wise_name, :no,:value=> @user.name)%>
+<!-- <%= hidden_field(:user, :token, :value=> @user.name) %> -->
 <p><b>Title:</b><%= @bussiness_plan.id %></p>
 <p><b>Title:</b><%= @bussiness_plan.title %></p>
 <p><b>Reason:</b><%= @bussiness_plan.reason %></p>
 <p><b>Vision:</b><%= @bussiness_plan.vision %></p>
 <p><b>Total Investment:</b><%= @bussiness_plan.total_investment %></p>
-
+ 
   <div class="field">
   <p><b>Net Margin:</b><%= @bussiness_plan.net_margin %></p>
   </div>
@@ -33,6 +35,9 @@
   </div>-->
   <div class="field">
     <%= f.hidden_field :bussiness_plan_id,:maxlength=>'10', :style=>'width: 100px;', :value=> @bussiness_plan.id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :wise_id,:maxlength=>'10', :style=>'width: 100px;', :value=> @bussiness_plan.wise_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -26,6 +26,10 @@ class QueriesController < ApplicationController
   def new
     @query = Query.new
     @bussiness_plan = BussinessPlan.find(params[:format])
+    @wise = Wise.find(@bussiness_plan.wise_id)
+    @user =User.find(@wise.user_id)
+    
+
     #respond_to do |format|
     #  format.html # new.html.erb
     #  format.json { render json: @query }
@@ -35,6 +39,10 @@ class QueriesController < ApplicationController
   # GET /queries/1/edit
   def edit
     @query = Query.find(params[:id])
+     @bussiness_plan = BussinessPlan.find(@query.bussiness_plan_id)
+    @wise = Wise.find(@query.wise_id)
+    @user =User.find(@wise.user_id)
+
   end
 
   # POST /queries
@@ -45,11 +53,14 @@ class QueriesController < ApplicationController
     params[:query][:entrepreneur_id] = 2 
     #El estado 1 significa que aun no esta respondido
     params[:query][:status] = 1
+    #debo sacar el id de sabio del plan de negocio
     @query = Query.new(params[:query])
+    
+    sWiseName = params[:wise_name][:no]
 
     respond_to do |format|
       if @query.save
-        format.html { redirect_to @query, notice: 'Query was successfully created, wise xxx will respond shortly.' }
+        format.html { redirect_to @query, notice: 'Query was successfully created, wise '+sWiseName+' will respond shortly.' }
         format.json { render json: @query, status: :created, location: @query }
       else
         format.html { render action: "new" }

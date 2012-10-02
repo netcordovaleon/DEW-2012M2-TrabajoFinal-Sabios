@@ -2,12 +2,15 @@
 
 <p>
   <b>Bussiness plan:</b>
-  <%= @query.bussiness_plan_id %>
+  <%= @query.bussiness_plan.title %>
 </p>
-
+<p>
+  <b>Sabio:</b>
+  <%= @query.bussiness_plan.wise_id %>
+</p>
 <p>
   <b>Entrepreneur:</b>
-  <%= @query.entrepreneur_id %>
+  <%= @query.entrepreneur.user.name %> <%= @query.entrepreneur.user.firstname %>
 </p>
 
 <p>
@@ -15,20 +18,12 @@
   <%= @query.question %>
 </p>
 
-<p>
+<!--<p>
   <b>Status:</b>
   <%= @query.status %>
-</p>
+</p>-->
 
-<p>
-  <b>Bussiness plan:</b>
-  <%= @query.bussiness_plan %>
-</p>
 
-<p>
-  <b>Entrepreneur:</b>
-  <%= @query.entrepreneur %>
-</p>
 
 
 <%= link_to 'Edit', edit_query_path(@query) %> |
