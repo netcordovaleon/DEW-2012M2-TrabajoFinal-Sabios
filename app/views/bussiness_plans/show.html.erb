@@ -44,6 +44,6 @@
   <%= @bussiness_plan.status %>
 </p>
 
-
 <%= link_to 'Editar', edit_bussiness_plan_path(@bussiness_plan) %>
 <%= link_to 'Regresar', bussiness_plans_path %>
+<%= link_to 'Question about this business plan',  new_query_path(@bussiness_plan.id) %>

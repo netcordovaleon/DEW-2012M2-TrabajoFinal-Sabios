@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bussiness_plan_id: 1
+  entrepreneur_id: 1
+  question: MyString
+  status: 1
+  bussiness_plan: 
+  entrepreneur: 
+
+two:
+  bussiness_plan_id: 1
+  entrepreneur_id: 1
+  question: MyString
+  status: 1
+  bussiness_plan: 
+  entrepreneur: 

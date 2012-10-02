@@ -1,4 +1,8 @@
 DewFinal::Application.routes.draw do
+  resources :replies
+
+  resources :queries
+
   resources :pcategories
 
   resources :bussiness_plans

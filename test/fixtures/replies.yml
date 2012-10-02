@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  query_id: 1
+  content: MyText
+  query: 
+
+two:
+  query_id: 1
+  content: MyText
+  query: 

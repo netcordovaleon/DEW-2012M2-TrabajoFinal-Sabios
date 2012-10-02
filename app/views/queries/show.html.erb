@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bussiness plan:</b>
+  <%= @query.bussiness_plan_id %>
+</p>
+
+<p>
+  <b>Entrepreneur:</b>
+  <%= @query.entrepreneur_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @query.question %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @query.status %>
+</p>
+
+<p>
+  <b>Bussiness plan:</b>
+  <%= @query.bussiness_plan %>
+</p>
+
+<p>
+  <b>Entrepreneur:</b>
+  <%= @query.entrepreneur %>
+</p>
+
+
+<%= link_to 'Edit', edit_query_path(@query) %> |
+<%= link_to 'Back', queries_path %>

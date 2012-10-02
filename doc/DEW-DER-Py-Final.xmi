@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2012-10-01T18:40:02" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
+<XMI verified="false" xmi.version="1.2" timestamp="2012-10-01T20:12:55" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://uml.sf.net</XMI.exporter>
@@ -81,7 +81,7 @@
         <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" relationship="true" multiplicity="*" xmi.id="cvgqRgY4bO4X" type="LwOeTiT3qiJC" name="" aggregation="none"/>
        </UML:Association.connection>
       </UML:Association>
-      <UML:Association visibility="public" isSpecification="false" namespace="Entity Relationship Model" xmi.id="QNUPJsAYTI0s" name="pertenece">
+      <UML:Association visibility="public" isSpecification="false" namespace="Entity Relationship Model" xmi.id="QNUPJsAYTI0s" name="Pertenece">
        <UML:Association.connection>
         <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" multiplicity="1" xmi.id="b5ndrrmQWN2k" type="4o0uQ6G5Iv3r" name="" aggregation="none"/>
         <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" relationship="true" multiplicity="1" xmi.id="YwwfSY2ttWIC" type="hb3zW4rUdEyJ" name="" aggregation="none"/>
@@ -101,7 +101,7 @@
       </UML:Association>
       <UML:Entity visibility="public" isSpecification="false" namespace="Entity Relationship Model" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="HKZooDE4NYYo" name="purchase"/>
       <UML:Entity visibility="public" isSpecification="false" namespace="Entity Relationship Model" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="VhtObwpU9OZ5" name="detail_purchase"/>
-      <UML:Association visibility="public" isSpecification="false" namespace="Entity Relationship Model" xmi.id="wCLJkH7zbgmN" name="">
+      <UML:Association visibility="public" isSpecification="false" namespace="Entity Relationship Model" xmi.id="wCLJkH7zbgmN" name="Realiza">
        <UML:Association.connection>
         <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" multiplicity="1" xmi.id="ryRCWy00fsOE" type="MpQoxz8wUHRu" name="" aggregation="none"/>
         <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" relationship="true" multiplicity="*" xmi.id="mCjvYGzSQKl8" type="HKZooDE4NYYo" name="" aggregation="none"/>
@@ -174,7 +174,7 @@
            <startpoint startx="123" starty="31"/>
            <endpoint endx="347" endy="31"/>
           </linepath>
-          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="198" showstereotype="1" y="30" text="pertenece" font="Sans Serif,9,-1,0,50,0,0,0,0,0" pretext="" role="703" width="69" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="QTZkXfmqQW7k" height="18"/>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="235" showstereotype="1" y="31" text="Pertenece" font="Sans Serif,9,-1,0,50,0,0,0,0,0" pretext="" role="703" width="69" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="QTZkXfmqQW7k" height="18"/>
           <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="125" showstereotype="1" y="11" text="1" font="Sans Serif,9,-1,0,50,0,0,0,0,0" pretext="" role="701" width="16" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="3gvRF1e5l4ZV" height="18"/>
           <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="329" showstereotype="1" y="11" text="1" font="Sans Serif,9,-1,0,50,0,0,0,0,0" pretext="" role="702" width="16" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="c3PJtvlJOK4w" height="18"/>
          </assocwidget>
@@ -202,6 +202,7 @@
            <startpoint startx="145" starty="198"/>
            <endpoint endx="145" endy="307"/>
           </linepath>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="145" showstereotype="1" y="252" text="Realiza" font="Sans Serif,9,-1,5,50,0,0,0,0,0" pretext="" role="703" width="50" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="efs2NAznf7fM" height="18"/>
           <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="147" showstereotype="1" y="200" text="1" font="Sans Serif,9,-1,5,50,0,0,0,0,0" pretext="" role="701" width="16" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="DXJ4RqPJNkpl" height="18"/>
           <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="152" showstereotype="1" y="284" text="*" font="Sans Serif,9,-1,5,50,0,0,0,0,0" pretext="" role="702" width="14" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="BxCcHFZSkqWC" height="18"/>
          </assocwidget>
@@ -246,7 +247,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="1XBWQleVZcNy" uniqueid="PU8ujffZTtCe" documentation=""/>
+  <docsettings viewid="1XBWQleVZcNy" uniqueid="efs2NAznf7fM" documentation=""/>
   <listview>
    <listitem open="1" type="800" id="Views">
     <listitem open="1" type="836" id="Entity Relationship Model">
