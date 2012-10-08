@@ -1,4 +1,14 @@
 <h1>Monitoreo de planes de negocio</h1>
+<table style="width:250px;font-family:Arial;">
+	<tr>
+		<td colspan="6" style="font-weight:bold;font-size:20px;">Historial de estados</td>
+	</tr>
+	<tr>
+		<td><img src="../assets/Inicial.png" style="width:40px;heigth:40px;" /></td><td>Inicial</td>
+		<td><img src="../assets/Ok.png" style="width:40px;heigth:40px;" /></td><td>Aprobado</td>
+		<td><img src="../assets/Cancel.png" style="width:40px;heigth:40px;" /></td><td>Rechazado</td>
+	</tr>
+</table><br />
 
 <table class="grilla" style="width:100%;">
   <tr>
@@ -10,6 +20,7 @@
     <th>Margen</th>
     <th>ROI</th>
     <th>Estado</th>
+    <th>&nbsp;</th>
   </tr>
 
 <% @bussiness_plans.each do |bussiness_plan| %>
@@ -21,11 +32,10 @@
     <td>S/.&nbsp;&nbsp;<%= bussiness_plan.total_investment %></td>
     <td>S/.&nbsp;&nbsp;<%= bussiness_plan.net_margin %></td>
     <td>S/.&nbsp;&nbsp;<%= bussiness_plan.roi %></td>
-    <td>
-	<% if (bussiness_plan.status == "Iniciado") %>
-		<img src="../assets/icon_check.png" style="width:40px;heigth:40px;" />
-	<% end %>
+    <td style="text-align:center;">
+	<% if (bussiness_plan.status == "Inicial") %><img src="../assets/Ok.png" style="width:40px;heigth:40px;" /><% end %>
     </td>
+    <td><%= link_to 'Cambiar estado', edit_bussiness_plan_mo_path(bussiness_plan) %></td>
   </tr>
 <% end %>
 </table>

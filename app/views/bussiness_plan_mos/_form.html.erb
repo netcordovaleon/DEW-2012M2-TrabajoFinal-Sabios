@@ -1,53 +1,102 @@
+<script>
+	function changeStatus (mensaje){
+		$("#status_content").val(mensaje);
+	}
+	
+	function mensaje (da){
+	alert(da);
+	//JSON.stringify(ai)
+	var url = '/bussiness_plan_mos/update'; 
+	$.ajax({
+	    url: url,
+	    type: 'POST',
+	    data: { id : "1" },
+	    cache: false,
+	    contentType: 'application/json; charset=utf-8',
+	    success: function (success) {
+	        alert(success);
+	    },
+	    error: function (err) {
+	        alert(err);
+	    }
+    });
+	}
+</script>
+
 <%= form_for(@bussiness_plan) do |f| %>
-  <% if @bussiness_plan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bussiness_plan.errors.count, "error") %> prohibited this bussiness_plan from being saved:</h2>
-
-      <ul>
-      <% @bussiness_plan.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :business_vision %><br />
-    <%= f.text_area :vision %>
-  </div>
-  <div class="field">
-    <%= f.label :reasoning_leading_to_the_goodness_of_the_proposal %><br />
-    <%= f.text_area :reason %>
-  </div>
-  <div class="field">
-    <%= f.label :runtime %><br />
-    <%= f.number_field :runtime %>
-  </div>
-  <div class="field">
-    <%= f.label :total_investment %><br />
-    <%= f.number_field :total_investment %>
-  </div>
-  <div class="field">
-    <%= f.label :net_margin %><br />
-    <%= f.number_field :net_margin %>
-  </div>
-  <div class="field">
-    <%= f.label :roi %><br />
-    <%= f.text_field :roi %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-	<%= f.collection_select :category_id, Category.all, :id, :name, :prompt => true %>
-  </div>
-  <div class="field">
-    <%= f.label :Estado %><br />
-    <%= f.text_field :status, :readonly => true, :value=> "Iniciado" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<table  style="width:100%;">
+	<tr>
+		<td style="width:660px;">
+			<fieldset style="height:370px;">             
+			    <legend>INFORMACION GENERAL DEL PROGRAMA</legend>
+					<table style="width:650px;">
+						<tr>
+							<td class="label-text">Titulo del plan</td>
+							<td colspan="3"><%= f.text_field :title, :style => "width:100%;", :readonly => true, :class => "input-disabled" %></td>
+						</tr>
+						<tr>
+							<td class="label-text">Vision del Negocio</td>
+							<td colspan="3"><%= f.text_area :vision, :style => "width:100%;height:100px;", :readonly => true, :class => "input-disabled" %></td>
+						</tr>
+						<tr>
+							<td class="label-text">Razonamiento</td>
+							<td colspan="3"><%= f.text_area :reason, :style => "width:100%;height:100px;", :readonly => true, :class => "input-disabled" %></td>
+						</tr>
+						<tr>
+							<td class="label-text">Tiempo de ejecucion</td>
+							<td><%= f.number_field :runtime, :readonly => true, :class => "input-disabled" %></td>
+							<td class="label-text">Total de inversion</td>
+							<td><%= f.number_field :total_investment, :readonly => true, :class => "input-disabled" %></td>
+						</tr>
+						<tr>
+							<td class="label-text">Margen anual</td>
+							<td><%= f.number_field :net_margin, :readonly => true, :class => "input-disabled" %></td>
+							<td class="label-text">ROI</td>
+							<td><%= f.text_field :roi, :readonly => true, :class => "input-disabled"  %></td>
+						</tr>
+						<tr style="display:none;">
+							<td class="label-text">Categoria</td>
+							<td colspan="3"><%= f.collection_select :category_id, Category.all, :id, :name, :readonly => true %> </td>
+						</tr>
+						<tr style="display:none;">
+							<td class="label-text">Estado</td>
+							<td colspan="3"><%= f.text_field :status, :readonly => true, :value=> "Iniciado" %></td>
+						</tr>
+					</table>
+			</fieldset>
+		</td>
+		<td>
+			<fieldset style="height:370px;">             
+			    <legend>CAMBIO DE ESTADO DEL PROGRAMA</legend>
+					<table style="width:100%;font-family:Arial;">
+						<tr>
+							<td class="label-text">Historial de estados </td>
+							<td colspan="2">
+								<table>
+									<tr>
+										<td style="border:1px solid black;">Inicial</td><td style="border:1px solid black;cursor:pointer;"><img src="../../assets/Inicial.png" style="width:25px;heigth:25px;"  onclick="javascript:changeStatus('Inicial');"/></td>
+										<td style="border:1px solid black;">Aprobado</td><td style="border:1px solid black;cursor:pointer;"> <img src="../../assets/Ok.png" style="width:25px;heigth:25px;" onclick="javascript:changeStatus('Aprobado');"/></td>
+										<td style="border:1px solid black;">Rechazado</td><td style="border:1px solid black;cursor:pointer;"><img src="../../assets/Cancel.png" style="width:25px;heigth:25px;" onclick="javascript:changeStatus('Rechazado');"/></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>Seleccione estado</td>
+							<td><%= f.text_field :status, :readonly => true, :id => "status_content" %></td>
+						</tr>
+						<tr>
+							<td>Comentario</td>
+							<td colspan="2"><%= f.text_area :coment, :style => "width:100%;height:100px;" %></td>
+						</tr>
+						<tr>
+					     	 <td colspan="2"><%= f.submit "Cambiar Estado"%></td>
+					     	 <td><a href="#" onclick="mensaje(<%=@bussiness_plan.id%>)">fsdfsdfsd</a></td>
+						</tr>
+					</table>
+			</fieldset>
+		</td>
+	</tr>
+</table>
+<br />
 <% end %>
