@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<fieldset style="width:600px;">             
+    <legend>Informacion del Emprendedor</legend>
+  <p>
+    <b class="label-text" >Name:</b>
+    <%= @entrepreneur.user.name %>
+  </p>
+
+  <p>
+    <b class="label-text">Firstname:</b>
+    <%= @entrepreneur.user.firstname %>
+  </p>
+  <p>
+    <b class="label-text">Lastname:</b>
+    <%= @entrepreneur.user.lastname %>
+  </p>    
+  <p>
+    <b class="label-text">Sexo:</b>
+    <%= @entrepreneur.user.sexo %>
+  </p>
+  <p>
+    <b class="label-text">Document Type:</b>
+    <%= @entrepreneur.user.document_type %>
+  </p>
+  <p>
+    <b class="label-text">Document Number:</b>
+    <%= @entrepreneur.user.document_number %></p>
+  <p>
+    <b class="label-text">Email:</b>
+    <%= @entrepreneur.user.email %></p>
+  <p>
+    <b class="label-text">Cellular:</b>
+    <%= @entrepreneur.user.cellular %></p>
+  <p>
+    <b class="label-text">Addres:</b>
+    <%= @entrepreneur.user.addres %></p>
+  <p>
+    <b class="label-text">Birth Date:</b>
+    <%= @entrepreneur.user.birth_date %></p>
+</fieldset>
+
+<%= link_to 'Editar', edit_entrepreneur_path(@entrepreneur) %> |
+<%= link_to 'Atras', entrepreneurs_path %>

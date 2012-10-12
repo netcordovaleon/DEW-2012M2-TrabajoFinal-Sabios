@@ -1,0 +1,31 @@
+<link href="../../../utilitario/style/base.css" rel="stylesheet" type="text/css" />
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Descripcion %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :Categoria %><br />
+	<%= f.collection_select :pcategory_id, Pcategory.all, :id, :name, :prompt => true %>
+ 
+  </div>
+  <div class="actions">
+    <%= f.submit :value => "Grabar" %>
+  </div>
+<% end %>

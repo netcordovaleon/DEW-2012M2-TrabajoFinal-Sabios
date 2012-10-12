@@ -1,0 +1,33 @@
+<h1>Planes de Negocio</h1>
+
+<table class="grilla" style="width:100%;">
+  <tr>
+    <th>Title</th>
+    <th>Vision</th>
+    <th>Reason</th>
+    <th>Runtime</th>
+    <th>Total investment</th>
+    <th>Net margin</th>
+    <th>Roi</th>
+    <th>Category</th>
+    <th>Estado</th>
+  </tr>
+
+<% @bussiness_plans.each do |bussiness_plan| %>
+  <tr>
+    <td><%= bussiness_plan.title %></td>
+    <td><%= bussiness_plan.vision %></td>
+    <td><%= bussiness_plan.reason %></td>
+    <td><%= bussiness_plan.runtime %></td>
+    <td><%= bussiness_plan.total_investment %></td>
+    <td><%= bussiness_plan.net_margin %></td>
+    <td><%= bussiness_plan.roi %></td>
+    <td><%= bussiness_plan.category.name %></td>
+    <td><%= bussiness_plan.status %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bussiness plan', new_bussiness_plan_path %>

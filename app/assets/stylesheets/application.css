@@ -1,0 +1,309 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+h1 {
+    font-size:30px;    
+    font-family:Arial;
+    color: #0B0B61;
+    text-align:left;
+    width:100%;
+    padding:7px 7px 7px 7px;
+    border-bottom:2px solid #000000;
+}
+
+.grilla {
+    padding:0;
+    border-collapse:collapse;
+}
+
+
+.grilla th {
+	height:30px;
+	background:url('fondo.gif') center;
+	/*background:red;*/
+	color:#FFFFFF;
+}
+
+.grilla td {
+	height:30px;
+	color:#000000;
+	font-family:Arial;
+	border-bottom:1px solid black;
+}
+
+.link-button {
+    width:auto;
+    float:left;
+    background: url('fondo.gif') 0 -3px repeat-x;
+    color:#fff !important;
+    text-transform:none;
+    text-decoration:none;
+    padding:7px 10px 8px 10px;
+    text-shadow:0px -1px #278db8;
+    border:1px solid #339cdf;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    margin:0 12px 0 0;
+    cursor:pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+}
+
+#formularios a {
+    width:auto;
+    float:left;
+    background: url('fondo.gif') 0 -3px repeat-x;
+    color:#fff !important;
+    text-transform:none;
+    text-decoration:none;
+    padding:7px 10px 8px 10px;
+    text-shadow:0px -1px #278db8;
+    border:1px solid #339cdf;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    margin:0 12px 0 0;
+    cursor:pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+}
+
+input[type="text"], input[type="password"], select, textarea {
+    border:1px solid #4A9DE8;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    font-family:Verdana;
+    font-size:11px;
+    box-shadow:inset 0px 1px 2px #bbb;
+    -webkit-box-shadow:inset 0px 1px 2px #bbb;
+    -moz-box-shadow:inset 0px 1px 2px #bbb;
+}
+input[type="text"], input[type="password"], select
+{
+    height:23px;
+}
+
+.label-text {
+    width:200px;
+    font-size:13px;
+    font-family:Arial;
+    color:#0B0B61;
+    font-weight:bold;
+}
+
+.label-result {
+    width:200px;
+    font-size:14px;
+    font-family:Arial;
+    color:#000000;
+    text-transform:uppercase;
+}
+
+fieldset {
+	border:1px solid #A4A4A4;
+}
+
+input[type="button"], input[type="submit"] {
+    width:auto;
+    float:left;
+    background: url('fondo.gif') 0 -3px repeat-x;
+    color:#fff;
+    padding:7px 10px 8px 10px;
+    text-shadow:0px -1px #278db8;
+    border:1px solid #339cdf;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    margin:0 12px 0 0;
+    cursor:pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+    
+}
+
+/*CABECERA Y PIE DE PAGINA DEL FORMULARIO*/
+#footer {width: 100%; display:inline-block; color:white; font-size: 11px; text-align: center; }
+
+
+#footer_text {width: 100%; background:#004777; display:inline-block; float: right; padding: 10px 0; margin-top: 5px; border:1px solid black; font-family:Century Gothic; font-size:10px;}
+ 
+#banner {
+	width:100%;
+}
+ 
+ 
+#banner .fondo {
+	background:url('Img-Fondo-Banner2.png') center;
+	height:130px;
+}
+
+/*CABECERA Y PIE DE PAGINA DEL FORMULARIO*/
+
+
+
+
+
+/**
+ *********************************************
+ * Prototype of styles for horizontal CSS-menu
+ * @data 30.06.2009
+ *********************************************
+ * (X)HTML-scheme:
+ *  <div id="menu">
+ *      <ul class="menu">
+ *          <li><a href="#" class="parent"><span>level 1</span></a>
+ *              <ul>
+ *                  <li><a href="#" class="parent"><span>level 2</span></a>
+ *                      <ul><li><a href="#"><span>level 3</span></a></li></ul>
+ *                  </li>
+ *              </ul>
+ *          </li>
+ *          <li class="last"><a href="#"><span>level 1</span></a></li>
+ *      </ul>
+ *  </div>
+ *********************************************
+ */
+
+/* menu::base */
+div#menu {
+    height:41px;
+    background:url('main-bg.png') repeat-x;
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+}
+div#menu ul.menu {
+    padding-left: 30px;
+}
+
+div#menu li {
+    position: relative;
+    z-index: 9;
+    margin: 0;
+    padding: 0 5px 0 0;
+    display: block;
+    float: left;
+}
+div#menu li:hover>ul {
+    left: -2px;
+}
+
+div#menu a {
+    position: relative;
+    z-index: 10;
+    height: 41px;
+    display: block;
+    float: left;
+    line-height: 41px;
+    text-decoration: none;
+    font: normal 12px Trebuchet MS;
+}
+div#menu a:hover, div#menu a:hover span { color: #fff; }
+div#menu li.current a {}
+
+div#menu span {
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+}
+div#menu ul ul a.parent span {
+    background-position:95% 8px;
+    background-image: url('item-pointer.gif');
+}
+div#menu ul ul a.parent:hover span {
+    background-image: url('item-pointer-mover.gif');
+}
+
+/* menu::level1 */
+div#menu a {
+    padding: 0 10px 0 10px;
+    line-height: 30px;
+    color: #e5e5e5;
+}
+div#menu span {
+    margin-top: 5px;
+}/**@replace#1*/
+div#menu li { background: url('main-delimiter.png') 98% 4px no-repeat; }
+div#menu li.last { background: none; }
+
+/* menu::level2 */
+div#menu ul ul li { background: none; }
+div#menu ul ul {
+    position: absolute;
+    top: 38px;
+    left: -999em;
+    width: 163px;
+    padding: 5px 0 0 0;
+    background: rgb(45,45,45);
+    margin-top:1px;
+}
+div#menu ul ul a {
+    padding: 0 0 0 15px;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 24px;
+    color: rgb(169,169,169);
+}
+div#menu ul ul span {
+    margin-top: 0;
+    padding-right: 15px;
+    _padding-right: 20px;
+    color: rgb(169,169,169);
+}
+div#menu ul ul a:hover span {
+    color: #fff;
+}
+div#menu ul ul li.last { background: none; }
+div#menu ul ul li {
+    width: 100%;
+}
+
+/* menu::level3 */
+div#menu ul ul ul {
+    padding: 0;
+    margin: -38px 0 0 163px !important;
+    margin-left:172px;
+}
+
+/* colors */
+div#menu ul ul ul { background: rgb(41,41,41); }
+div#menu ul ul ul ul { background: rgb(38,38,38); }
+div#menu ul ul ul ul { background: rgb(35,35,35); }
+
+/* lava lamp */
+div#menu li.back {
+    background: url(images/lava.png) no-repeat right -44px !important;
+    background-image: url('lava.gif');
+    width: 13px;
+    height: 44px;
+    z-index: 8;
+    position: absolute;
+    margin: -1px 0 0 -5px;
+}
+div#menu li.back .left {
+    background: url(images/lava.png) no-repeat top left !important;
+    background-image: url('lava.gif');
+    height: 44px;
+    margin-right: 8px;
+}

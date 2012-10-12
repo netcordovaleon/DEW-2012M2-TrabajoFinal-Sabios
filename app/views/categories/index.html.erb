@@ -1,0 +1,27 @@
+<h1>Listado de Sub-categoria</h1>
+
+<table class="grilla" style="width:800px;">
+  <tr>
+    <th>Categoria Principal</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.pcategory.name %></td>
+    <td><%= category.name %></td>
+    <td><%= category.description %></td>
+    <td><%= link_to 'Ver', category %></td>
+    <td><%= link_to 'Editar', edit_category_path(category) %></td>
+    <td><%= link_to 'Eliminar', category, method: :delete, data: { confirm: 'Esta seguro que desea eliminar este registro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Crear nuevo', new_category_path %>

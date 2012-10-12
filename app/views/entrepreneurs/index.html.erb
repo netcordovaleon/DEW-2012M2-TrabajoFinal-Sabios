@@ -1,0 +1,44 @@
+<h1>Listing entrepreneurs</h1>
+
+<table class="grilla">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Sexo</th>
+    <th>Document Type</th>
+    <th>Document Number</th>
+    <th>Email</th>
+    <th>Cellular</th>
+    <th>Addres</th>
+    <th>Brith Date</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	
+  </tr>
+
+<% @entrepreneurs.each do |entrepreneur| %>
+  <tr>
+    <td><%= entrepreneur.id %></td>
+    <td><%= entrepreneur.user.name %></td>
+    <td><%= entrepreneur.user.firstname %></td>
+    <td><%= entrepreneur.user.lastname %></td>
+    <td><%= entrepreneur.user.sexo %></td>
+    <td><%= entrepreneur.user.document_type %></td>
+    <td><%= entrepreneur.user.document_number %></td>
+    <td><%= entrepreneur.user.email %></td>
+    <td><%= entrepreneur.user.cellular %></td>
+    <td><%= entrepreneur.user.addres %></td>
+    <td><%= entrepreneur.user.birth_date %></td>
+    <td><%= link_to 'Show', entrepreneur %></td>
+    <td><%= link_to 'Edit', edit_entrepreneur_path(entrepreneur) %></td>
+    <td><%= link_to 'Destroy', entrepreneur, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entrepreneur', new_entrepreneur_path %>

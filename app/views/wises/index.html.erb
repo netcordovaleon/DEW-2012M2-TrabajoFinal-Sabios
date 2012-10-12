@@ -1,0 +1,50 @@
+<h1>Listing wises</h1>
+<table class="grilla">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Sexo</th>
+    <th>Document Type</th>
+    <th>Document Number</th>
+    <th>Email</th>
+    <th>Cellular</th>
+    <th>Addres</th>
+    <th>Brith Date</th>
+    <th>Apellation</th>
+    <th>Website</th>
+    <th>Bank</th>
+    <th>Banck account</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	</tr>
+
+<% @wises.each do |wise| %>
+  <tr>
+    <td><%= wise.id %></td>
+    <td><%= wise.user.name %></td>
+    <td><%= wise.user.firstname %></td>
+    <td><%= wise.user.lastname %></td>
+    <td><%= wise.user.sexo %></td>
+    <td><%= wise.user.document_type %></td>
+    <td><%= wise.user.document_number %></td>
+    <td><%= wise.user.email %></td>
+    <td><%= wise.user.cellular %></td>
+    <td><%= wise.user.addres %></td>
+    <td><%= wise.user.birth_date %></td>
+    <td><%= wise.apellation %></td>
+    <td><%= wise.website %></td>
+    <td><%= wise.bank %></td>
+    <td><%= wise.banck_account %></td>
+    <td><%= link_to 'Show', wise %></td>
+    <td><%= link_to 'Edit', edit_wise_path(wise) %></td>
+    <td><%= link_to 'Destroy', wise, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wise', new_wise_path %>
