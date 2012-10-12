@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  credir_car: MyString
+  date: 2012-10-11 22:15:45
+  code: MyString
+  address: MyString
+  bussiness_plan: 
+  entrepreneur: 
+
+two:
+  credir_car: MyString
+  date: 2012-10-11 22:15:45
+  code: MyString
+  address: MyString
+  bussiness_plan: 
+  entrepreneur: 

@@ -14,4 +14,10 @@ class BussinessPlanMosController < ApplicationController
   def edit
     @bussiness_plan = BussinessPlan.find(params[:id])
   end
+  
+  def change_status
+  	  @bussiness_plan = BussinessPlan.find(params[:id])
+  	  @bussiness_plan.update_attributes(params[:bussiness_plan])
+  end 
+  	  
 end

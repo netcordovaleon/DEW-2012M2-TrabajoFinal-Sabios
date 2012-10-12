@@ -1,9 +1,12 @@
 DewFinal::Application.routes.draw do
+  resources :sells
+
   devise_for :users
 
   ActiveAdmin.routes(self)
 
-  
+  #match "change" => "bussiness_plan_mos#change_status"
+
   resources :replies
 
   resources :queries
@@ -13,7 +16,7 @@ DewFinal::Application.routes.draw do
   resources :bussiness_plans
   
   resources :bussiness_plan_mos
-
+  	  
   resources :entrepreneurs
 
   resources :wises
@@ -21,7 +24,7 @@ DewFinal::Application.routes.draw do
   resources :users
 
   resources :categories
-  
+
   root :to => "bussiness_plans#index"
 
   # The priority is based upon order of creation:

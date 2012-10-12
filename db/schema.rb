@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010194929) do
+ActiveRecord::Schema.define(:version => 20121012031545) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -90,6 +90,20 @@ ActiveRecord::Schema.define(:version => 20121010194929) do
   end
 
   add_index "replies", ["query_id"], :name => "index_replies_on_query_id"
+
+  create_table "sells", :force => true do |t|
+    t.string   "credir_car"
+    t.datetime "date"
+    t.string   "code"
+    t.string   "address"
+    t.integer  "bussiness_plan_id"
+    t.integer  "entrepreneur_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "sells", ["bussiness_plan_id"], :name => "index_sells_on_bussiness_plan_id"
+  add_index "sells", ["entrepreneur_id"], :name => "index_sells_on_entrepreneur_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false

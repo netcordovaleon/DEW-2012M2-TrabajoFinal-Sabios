@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Credir car:</b>
+  <%= @sell.credir_car %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @sell.date %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @sell.code %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @sell.address %>
+</p>
+
+<p>
+  <b>Bussiness plan:</b>
+  <%= @sell.bussiness_plan %>
+</p>
+
+<p>
+  <b>Entrepreneur:</b>
+  <%= @sell.entrepreneur %>
+</p>
+
+
+<%= link_to 'Edit', edit_sell_path(@sell) %> |
+<%= link_to 'Back', sells_path %>

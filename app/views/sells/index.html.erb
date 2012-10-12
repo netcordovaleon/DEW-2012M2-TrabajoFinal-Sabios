@@ -1,0 +1,33 @@
+<h1>Listing sells</h1>
+
+<table>
+  <tr>
+    <th>Credir car</th>
+    <th>Date</th>
+    <th>Code</th>
+    <th>Address</th>
+    <th>Bussiness plan</th>
+    <th>Entrepreneur</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sells.each do |sell| %>
+  <tr>
+    <td><%= sell.credir_car %></td>
+    <td><%= sell.date %></td>
+    <td><%= sell.code %></td>
+    <td><%= sell.address %></td>
+    <td><%= sell.bussiness_plan %></td>
+    <td><%= sell.entrepreneur %></td>
+    <td><%= link_to 'Show', sell %></td>
+    <td><%= link_to 'Edit', edit_sell_path(sell) %></td>
+    <td><%= link_to 'Destroy', sell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sell', new_sell_path %>

@@ -33,7 +33,9 @@
     <td>S/.&nbsp;&nbsp;<%= bussiness_plan.net_margin %></td>
     <td>S/.&nbsp;&nbsp;<%= bussiness_plan.roi %></td>
     <td style="text-align:center;">
-	<% if (bussiness_plan.status == "Inicial") %><img src="../assets/Ok.png" style="width:40px;heigth:40px;" /><% end %>
+	<% if (bussiness_plan.status == "Inicial") %><img src="../assets/Inicial.png" style="width:40px;heigth:40px;" /><% end %>
+	<% if (bussiness_plan.status == "Aprobado") %><img src="../assets/Ok.png" style="width:40px;heigth:40px;" /><% end %>
+	<% if (bussiness_plan.status == "Rechazado") %><img src="../assets/Cancel.png" style="width:40px;heigth:40px;" /><% end %>
     </td>
     <td><%= link_to 'Cambiar estado', edit_bussiness_plan_mo_path(bussiness_plan) %></td>
   </tr>
