@@ -1,4 +1,9 @@
 DewFinal::Application.routes.draw do
+  devise_for :users
+
+  ActiveAdmin.routes(self)
+
+  
   resources :replies
 
   resources :queries
