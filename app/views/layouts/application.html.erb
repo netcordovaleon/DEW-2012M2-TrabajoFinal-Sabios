@@ -78,8 +78,11 @@
         <li><a href="#" class="parent"><span>Procesos</span></a>
             <ul>
           	<li><a href="/bussiness_plan_mos"><span>Monitorear plan</span></a></li>
+			<% if (current_user.guy)== 2 %>            
             <li><a href="/sells/new"><span>Comprar plan</span></a></li>
-            <% if (current_user.guy)== 1 %>
+            <%end%>
+            
+			<% if (current_user.guy)== 1 %>
             <li><a href="/queries"><span>Preguntas Planes de negocio</span></a></li>
             <%end%>
             <% if (current_user.guy)== 2 %>

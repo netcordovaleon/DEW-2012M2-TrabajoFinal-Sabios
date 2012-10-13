@@ -45,9 +45,15 @@
     <%= f.label :"Seleccione Plan de negocio" %><br />
   <%= f.collection_select :bussiness_plan_id, BussinessPlan.all, :id, :title, :prompt => true %>
   </div>
+  
+
   <div class="field">
-    <%= f.label :"Seleccione emprendedor" %><br />
-    <%= f.collection_select :entrepreneur_id, Entrepreneur.all, :id, :id, :prompt => true %>
+   
+      <%
+@entrepreneur = Entrepreneur.find_by_user_id(current_user.id)
+%>
+<%= hidden_field(:sell, :entrepreneur_id , :value =>  @entrepreneur.id) %>  
+
   </div>
   <div class="field">
   	<input type="checkbox" id="pagar" name="pagar" />Mostrar pasarela Visa 
@@ -71,11 +77,7 @@
   </div>
   
   <div class="actions">
-<<<<<<< HEAD
-    <%= f.submit :value => "Grabar", :onclick => "return validaCamposVacios()" %>
-=======
     <%= f.submit "Grabar", :onclick => "return validaDatosPasarela();" %>
->>>>>>> 362f1d0e5d49ce2c0b43c75520f6a34c2ad298eb
   </div>
 <% end %>
 

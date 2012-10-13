@@ -48,15 +48,12 @@
     <%= f.text_field :status, :readonly => true, :value=> "Inicial" %>
   </div>
 <%
-#@wise = Wise.find_by_user_id(current_user.id)
+@wise = Wise.find_by_user_id(current_user.id)
 %>
-<%# hidden_field(:bussiness_plan, :wise_id , :value =>  @wise.id) %>  
+<%= hidden_field(:bussiness_plan, :wise_id , :value =>  @wise.id) %>  
 
   <div class="actions">
-<<<<<<< HEAD
-    <%= f.submit , :value => "Grabar", :onclick => "return validaCamposVacios()"%>
-=======
-    <%= f.submit %>
->>>>>>> 362f1d0e5d49ce2c0b43c75520f6a34c2ad298eb
+    <%= f.submit "Grabar", :onclick => "return validaCamposVacios()"%>
+
   </div>
 <% end %>
