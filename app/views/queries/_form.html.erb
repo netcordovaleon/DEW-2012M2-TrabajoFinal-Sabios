@@ -40,6 +40,6 @@
     <%= f.hidden_field :wise_id,:maxlength=>'10', :style=>'width: 100px;', :value=> @bussiness_plan.wise_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :value => "Grabar", :onclick => "return validaCamposVacios()" %>
   </div>
 <% end %>

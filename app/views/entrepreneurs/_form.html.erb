@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.text_field :username, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
+    <%= f.text_field :firstname, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
+    <%= f.text_field :lastname, :class => "vacios"  %>
   </div>
    <div class="field">
     <%= f.label :sexo %><br />
@@ -37,34 +37,34 @@
   </div>
   <div class="field">
     <%= f.label :document_number %><br />
-    <%= f.text_field :document_number %>
+    <%= f.text_field :document_number, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :cellular %><br />
-    <%= f.text_field :cellular %>
+    <%= f.text_field :cellular, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :addres %><br />
-    <%= f.text_field :addres %>
+    <%= f.text_field :addres, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :birth_date %><br />
-    <%= f.text_field :birth_date %>
+    <%= f.text_field :birth_date, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :class => "vacios"  %>
   </div>
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
     </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :value => "Grabar", :onclick => "return validaCamposVacios()" %>
   </div>
 
 <%= hidden_field(:user, :guy , :value => "2") %>  
