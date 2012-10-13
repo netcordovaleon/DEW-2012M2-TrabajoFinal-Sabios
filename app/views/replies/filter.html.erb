@@ -1,0 +1,26 @@
+<strong>
+respuestas sobre planes de negocio
+
+</strong>
+
+<h1>Listing my queries</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Bussiness plan</th>
+    <th>Question</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @queries.each do |query| %>
+  <tr>
+    <td><%= query.bussiness_plan_id %></td>
+    <td><%= query.bussiness_plan.title %></td>
+    <td><%= query.question %></td>
+    <td><%= link_to 'Show', query %></td>
+  </tr>
+<% end %>
+</table>
