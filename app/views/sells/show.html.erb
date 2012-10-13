@@ -1,35 +1,38 @@
-<p id="notice"><%= notice %></p>
+<script language="javascript">
+	alert("<%=notice%>");
+</script>
+
 
 <p>
-  <b>Credir car:</b>
+  <b>Tarjeta de Credito:</b>
   <%= @sell.credir_car %>
 </p>
 
 <p>
-  <b>Date:</b>
+  <b>Fecha:</b>
   <%= @sell.date %>
 </p>
 
 <p>
-  <b>Code:</b>
+  <b>Codigo:</b>
   <%= @sell.code %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>Direccion:</b>
   <%= @sell.address %>
 </p>
 
 <p>
-  <b>Bussiness plan:</b>
-  <%= @sell.bussiness_plan %>
+  <b>Plan de Negocio:</b>
+  <%= @sell.bussiness_plan.title %>
 </p>
 
 <p>
-  <b>Entrepreneur:</b>
-  <%= @sell.entrepreneur %>
+  <b>Emprendedor:</b>
+  <%= @sell.entrepreneur.user.firstname %>&nbsp;<%= @sell.entrepreneur.user.lastname %>
 </p>
 
 
-<%= link_to 'Edit', edit_sell_path(@sell) %> |
-<%= link_to 'Back', sells_path %>
+<%= link_to 'Editar', edit_sell_path(@sell) %>
+<%= link_to 'Regresar', sells_path %>

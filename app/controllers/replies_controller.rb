@@ -1,7 +1,32 @@
 class RepliesController < ApplicationController
+
+
+def add_book
+#abort("bobobob");
+ @replies=Reply.where(:query_id => params[:id])
+ @query=Query.find(params[:id])
+ @busplan = BussinessPlan.find(@query.bussiness_plan_id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @replies }
+    end
+#@user = User.find(params[:id])
+end
+
+def filter
+ #cargo mis preguntas
+ @queries = Query.all
+end
+
   # GET /replies
   # GET /replies.json
   def index
+      
+
+ #    @messages=Message.where(:name => params[:from])
+    
+    #abort("==ssssppp");
     @replies = Reply.all
 
     respond_to do |format|
@@ -13,6 +38,7 @@ class RepliesController < ApplicationController
   # GET /replies/1
   # GET /replies/1.json
   def show
+
     @reply = Reply.find(params[:id])
 
     respond_to do |format|
@@ -44,6 +70,10 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.save
+
+        @query = Query.find(params[:reply][:query_id])
+        @query.update_attributes(:status => 2)
+
         format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
         format.json { render json: @reply, status: :created, location: @reply }
       else

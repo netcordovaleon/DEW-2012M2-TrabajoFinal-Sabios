@@ -4,16 +4,16 @@
   <b>Query:</b>
   <%= @reply.query_id %>
 </p>
+<p>
+  <b>Pregunta:</b>
+  <%= @reply.query.question %>
+</p>
 
 <p>
-  <b>Content:</b>
+  <b>Tu Respuesta:</b>
   <%= @reply.content %>
 </p>
 
-<p>
-  <b>Query:</b>
-  <%= @reply.query %>
-</p>
 
 
 <%= link_to 'Edit', edit_reply_path(@reply) %> |

@@ -18,13 +18,26 @@
   <%= @query.question %>
 </p>
 
+<% if (current_user.guy == 1)%>
+<%=form_for@reply do |ede| %><br />
+  <div class="field">
+
+   <%= hidden_field(:reply, :query_id , :value => @query.id) %> 
+   <!-- <%= ede.text_field :query_id , :value => @query.id %>-->
+  </div>
+  <div class="field">
+    <%= ede.label :content %><br />
+    <%= ede.text_area :content %>
+  </div>
+    <div class="actions">
+    <%= ede.submit %>
+  </div>
+<%end%>
+<%end%>
+
 <!--<p>
   <b>Status:</b>
   <%= @query.status %>
 </p>-->
-
-
-
-
-<%= link_to 'Edit', edit_query_path(@query) %> |
-<%= link_to 'Back', queries_path %>
+<!--<%= link_to 'Edit', edit_query_path(@query) %> |
+<%= link_to 'Back', queries_path %>-->

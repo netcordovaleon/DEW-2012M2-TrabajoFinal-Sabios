@@ -1,5 +1,13 @@
 <h1>Planes de Negocio</h1>
 
+<%= form_for @search do |f| %>   
+ <p>   
+<%= f.label :Buscar_por_titulo %>   
+<%= f.text_field :title_contains %>   
+</p>   
+<p class="button"><%= f.submit "Buscar" %> </p>   
+<% end %>  
+
 <table class="grilla" style="width:100%;">
   <tr>
     <th>Title</th>
