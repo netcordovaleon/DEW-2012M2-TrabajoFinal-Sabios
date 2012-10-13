@@ -19,6 +19,8 @@
 		</td>
 	</tr>
 </table>
+<p id="notice"><%= notice %></p>
+ <% if current_user %>
 <div id="menu">
     <ul class="menu">
         <li><a href="#" onclick="javascript:alert('sin funcionalidad');" class="parent"><span>Pagina principal</span></a></li>
@@ -41,6 +43,7 @@
         <li class="last"><a href="#" onclick="javascript:alert('Sin Funcionalidad');"><span>Salir</span></a></li>
     </ul>
 </div>
+<% end %>
  
 
     <div id="nav">

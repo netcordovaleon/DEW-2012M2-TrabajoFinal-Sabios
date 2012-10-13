@@ -25,7 +25,10 @@ DewFinal::Application.routes.draw do
 
   resources :categories
 
-  root :to => "bussiness_plans#index"
+  #root :to => "bussiness_plans#index"
+  
+  root :to => "users#main"
+
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
 
