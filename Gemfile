@@ -14,6 +14,8 @@ gem 'json'
 gem 'activeadmin'
 gem 'meta_search','>= 1.1.0.pre'
 gem 'devise', '~> 2.0.0'
+#Gemas para el login
+gem 'authlogic'
 
 
 # Gems used only for assets and not required

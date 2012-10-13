@@ -41,6 +41,19 @@
         <li class="last"><a href="#" onclick="javascript:alert('Sin Funcionalidad');"><span>Salir</span></a></li>
     </ul>
 </div>
+ 
+
+    <div id="nav">
+        <% if current_user %>
+        <%= link_to "Edit Profile", edit_user_path(current_user.id)%>
+        <%= link_to "Logout", :logout%>
+        <% else %>
+        <%= link_to "Register", new_user_path%> |
+        <%= link_to "Login", :login %>
+        <% end %>
+    </div>
+
+
 <div id="formularios" style="min-height:600px;">
 	<%= yield %>
 </div>

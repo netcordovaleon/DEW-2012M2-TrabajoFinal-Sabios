@@ -1,4 +1,6 @@
-class UsersController < ApplicationController
+#class UsersController < ApplicationController
+class UsersController < InheritedResources::Base
+ 
   # GET /users
   # GET /users.json
   def index
@@ -42,7 +44,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    abort("user die");
     @user = User.new(params[:user])
 
     respond_to do |format|
