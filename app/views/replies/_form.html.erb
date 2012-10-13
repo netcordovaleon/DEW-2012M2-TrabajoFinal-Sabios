@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :query_id %><br />
-    <%= f.number_field :query_id %>
+    <%= f.number_field :query_id, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => "vacios"  %>
   </div>
   <div class="field">
     <%= f.label :query %><br />
-    <%= f.text_field :query %>
+    <%= f.text_field :query, :class => "vacios"  %>
   </div>
   <div class="actions">
     <%= f.submit :value => "Grabar", :onclick => "return validaCamposVacios()" %>
