@@ -45,7 +45,8 @@ class UsersController < InheritedResources::Base
   # POST /users.json
   def create
     @guy =  params[:user][:guy];
-
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
     if (@guy == "1")  
       @wise = Wise.new
     end

@@ -28,13 +28,13 @@
     <%= f.label :lastname %><br />
     <%= f.text_field :lastname %>
   </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :sexo %><br />
-    <%= f.text_field :sexo %>
-  </div>
-  <div class="field">
-    <%= f.label :document_type %><br />
-    <%= f.text_field :document_type %>
+    <%= f.select :sexo, @arregloSexo, :prompt => 'Select ...' %>
+    </div>
+ <div class="field">
+  <%= f.label :document_type %><br />
+  <%= f.select :document_type, @arregloTypeDoc, :prompt => 'Select ...' %>
   </div>
   <div class="field">
     <%= f.label :document_number %><br />
@@ -64,6 +64,15 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
     </div>
+
+<%if (@guy) == "2" %>
+<%= hidden_field(:user, :guy , :value => "2") %>  
+<% elsif (@guy) == "1"%>
+<%= hidden_field(:user, :guy , :value => "1") %>  
+<%end%>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
