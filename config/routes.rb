@@ -27,7 +27,7 @@ DewFinal::Application.routes.draw do
 
   #root :to => "bussiness_plans#index"
   
-  root :to => "users#main"
+  root :to => "user_sessions#index"
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout

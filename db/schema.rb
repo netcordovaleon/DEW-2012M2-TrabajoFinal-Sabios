@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013000814) do
+ActiveRecord::Schema.define(:version => 20121013011654) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20121013000814) do
     t.boolean  "superadmin",             :default => false, :null => false
     t.string   "username"
     t.string   "persistence_token"
+    t.integer  "guy"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

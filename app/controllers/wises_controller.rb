@@ -54,7 +54,9 @@ class WisesController < ApplicationController
                   :banck_account => params[:wise][:banck_account],
                   :bank => params[:wise][:bank],
                   :user_id => @user.id,
-                  :summary => params[:wise][:summary])
+                  :summary => params[:wise][:summary],
+                  :guy => 1 
+                  )
     respond_to do |format|
       if @wise.save
         format.html { redirect_to @wise, :notice => 'Wise was successfully created.' }

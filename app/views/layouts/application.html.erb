@@ -20,7 +20,19 @@
 	</tr>
 </table>
 <p id="notice"><%= notice %></p>
- <% if current_user %>
+
+    <div id="nav">
+        <% if current_user %>
+        <%= current_user.username %>
+        <%= link_to "Edit Profile", edit_user_path(current_user.id)%>
+        <%= link_to "Logout", :logout%>
+        <% else %>
+        <%= link_to "Register", new_user_path%> |
+        <%= link_to "Login", :login %>
+        <% end %>
+    </div>
+
+<% if current_user %>
 <div id="menu">
     <ul class="menu">
         <li><a href="#" onclick="javascript:alert('sin funcionalidad');" class="parent"><span>Pagina principal</span></a></li>
@@ -46,15 +58,7 @@
 <% end %>
  
 
-    <div id="nav">
-        <% if current_user %>
-        <%= link_to "Edit Profile", edit_user_path(current_user.id)%>
-        <%= link_to "Logout", :logout%>
-        <% else %>
-        <%= link_to "Register", new_user_path%> |
-        <%= link_to "Login", :login %>
-        <% end %>
-    </div>
+
 
 
 <div id="formularios" style="min-height:600px;">

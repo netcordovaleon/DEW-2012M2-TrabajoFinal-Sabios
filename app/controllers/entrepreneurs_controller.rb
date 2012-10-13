@@ -24,6 +24,7 @@ class EntrepreneursController < ApplicationController
   # GET /entrepreneurs/new
   # GET /entrepreneurs/new.json
   def new
+    @user = User.new
     @entrepreneur = Entrepreneur.new
     @arregloSexo = ["masculino","femenino"]
     @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
@@ -43,15 +44,17 @@ class EntrepreneursController < ApplicationController
 
   # POST /entrepreneurs
   # POST /entrepreneurs.json
-  def create
-  #@entrepreneur = Entrepreneur.new(params[:entrepreneur])
-  #grabo en user  
-  @user = User.new(params[:user])
-  
-  if @user.save
-  @entrepreneur = Entrepreneur.new(:user_id => @user.id)
+
+ def create
+  abort("aca")
+    @user = User.new(params[:user])
+    @arregloSexo = ["masculino","femenino"]    
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
+    #abort("usercreate")
     respond_to do |format|
-      if @entrepreneur.save
+      if @user.save
+        @entrepreneur = Entrepreneur.new(:user_id => @user.id, :guy => 2)
+        if @entrepreneur.save
         format.html { redirect_to @entrepreneur, :notice => 'Entrepreneur was successfully created.' }
         format.json { render :json => @entrepreneur, :status => :created, :location => @entrepreneur }
       else
@@ -59,9 +62,13 @@ class EntrepreneursController < ApplicationController
         format.json { render :json => @entrepreneur.errors, :status => :unprocessable_entity }
       end
     end
+    end
   end
 
-   end
+#=========================================================================================
+
+
+
 
   # PUT /entrepreneurs/1
   # PUT /entrepreneurs/1.json

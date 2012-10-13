@@ -44,10 +44,13 @@ class UsersController < InheritedResources::Base
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    @guy =  params[:user][:guy];
 
+    @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
+        @entrepreneur = Entrepreneur.new(:user_id => @user.id)
+        @entrepreneur.save
         format.html { redirect_to @user, :notice => 'User was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
