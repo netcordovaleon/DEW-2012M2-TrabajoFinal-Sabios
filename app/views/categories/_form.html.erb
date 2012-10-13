@@ -14,11 +14,11 @@
 
   <div class="field">
     <%= f.label :Nombre %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :Descripcion %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :Categoria %><br />
@@ -26,6 +26,6 @@
  
   </div>
   <div class="actions">
-    <%= f.submit :value => "Grabar" %>
+    <%= f.submit :value => "Grabar", :onclick => "return validaCamposVacios()" %>
   </div>
 <% end %>

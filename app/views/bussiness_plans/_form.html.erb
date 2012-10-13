@@ -13,31 +13,31 @@
 
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :business_vision %><br />
-    <%= f.text_area :vision %>
+    <%= f.text_area :vision, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :reasoning_leading_to_the_goodness_of_the_proposal %><br />
-    <%= f.text_area :reason %>
+    <%= f.text_area :reason, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :runtime %><br />
-    <%= f.number_field :runtime %>
+    <%= f.number_field :runtime, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :total_investment %><br />
-    <%= f.number_field :total_investment %>
+    <%= f.number_field :total_investment, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :net_margin %><br />
-    <%= f.number_field :net_margin %>
+    <%= f.number_field :net_margin, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :roi %><br />
-    <%= f.text_field :roi %>
+    <%= f.text_field :roi, :class => "vacios" %>
   </div>
   <div class="field">
     <%= f.label :category %><br />
@@ -53,6 +53,6 @@
 <%= hidden_field(:bussiness_plan, :wise_id , :value =>  @wise.id) %>  
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :value => "Grabar", :onclick => "return validaCamposVacios()" %>
   </div>
 <% end %>
