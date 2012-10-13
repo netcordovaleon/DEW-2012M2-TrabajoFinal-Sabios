@@ -28,7 +28,8 @@ class UsersController < InheritedResources::Base
   # GET /users/new.json
   def new
     @user = User.new
-
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @user }

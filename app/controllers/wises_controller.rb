@@ -2,6 +2,7 @@ class WisesController < ApplicationController
   # GET /wises
   # GET /wises.json
   def index
+     
     @wises = Wise.all
 
     respond_to do |format|
