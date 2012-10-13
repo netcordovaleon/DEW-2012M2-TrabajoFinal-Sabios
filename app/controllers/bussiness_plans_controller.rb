@@ -45,7 +45,7 @@ class BussinessPlansController < ApplicationController
 
     respond_to do |format|
       if @bussiness_plan.save
-        format.html { redirect_to @bussiness_plan, notice: 'Bussiness plan was successfully created.' }
+        format.html { redirect_to @bussiness_plan, notice: 'El plan de negocio se creo satisfactoriamente.' }
         format.json { render json: @bussiness_plan, status: :created, location: @bussiness_plan }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class BussinessPlansController < ApplicationController
 
     respond_to do |format|
       if @bussiness_plan.update_attributes(params[:bussiness_plan])
-        format.html { redirect_to @bussiness_plan, notice: 'Bussiness plan was successfully updated.' }
+        format.html { redirect_to @bussiness_plan, notice: 'El plan de negocio se modifico satisfactoriamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
