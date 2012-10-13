@@ -1,9 +1,22 @@
 class RepliesController < ApplicationController
+
+def filter
+ #cargo mis preguntas
+ #@queries = Query.find_by_entrepreneur_id(2)
+#@shows = Show.find(:all, :order => "date ASC, attending DESC")
+ #@queries = Query.find (:all , :conditions => {:find_by_entrepreneur_id =>2 })
+ @queries = Query.all
+# @cars = Car.find(:all, :conditions => { :in_production => #{params[:in_production]}, :year => #{params[:year]}, :make => #{params[:make]} })`
+
+
+#@shows = Show.find(:all, :order => "date")
+end
+
   # GET /replies
   # GET /replies.json
   def index
     @replies = Reply.all
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @replies }
@@ -44,6 +57,10 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.save
+
+        @query = Query.find(params[:reply][:query_id])
+        @query.update_attributes(:status => 2)
+
         format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
         format.json { render json: @reply, status: :created, location: @reply }
       else

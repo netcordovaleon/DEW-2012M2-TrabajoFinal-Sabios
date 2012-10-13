@@ -36,8 +36,17 @@
 
     <div id="nav">
         <% if current_user %>
-        <%= current_user.username %>
+        Bienvenido   
+        <strong><%= current_user.username %></strong>
         <%= current_user.guy %>
+        <%="Esta usted logeado como" %>
+        <% if (current_user.guy)== 1 %>
+            <strong><%=" Sabio" %></strong>
+        <% elsif (current_user.guy)== 2 %></strong>
+            <strong><%=" Emprendedor" %></strong>    
+        <% elsif (current_user.guy)== 3 %>
+            <strong><%=" Administrador" %></strong>        
+        <%end%>
         <!--<%= link_to "Edit Profile", edit_user_path(current_user.id)%>-->
         <%= link_to "Logout", :logout%>
         <% else %>
@@ -65,8 +74,15 @@
             <ul>
           	<li><a href="/bussiness_plan_mos"><span>Monitorear plan</span></a></li>
             <li><a href="/sells/new"><span>Comprar plan</span></a></li>
-            
-            <li><a href="/queries"><span>Preguntas sobre Planes de negocio</span></a></li>
+            <% if (current_user.guy)== 1 %>
+            <li><a href="/queries"><span>Preguntas Planes de negocio</span></a></li>
+            <%end%>
+            <% if (current_user.guy)== 2 %>
+            <li>
+              <%= link_to "Respuestas Planes de Negocio", :responses %>
+              <!--<a href="/queries"><span>Respuestas Planes de negocio</span></a></li> -->
+            <%end%>
+
             </ul>
         </li>
         <li class="last"><%= link_to "Logout", :logout%></li>
