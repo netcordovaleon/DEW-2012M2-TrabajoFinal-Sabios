@@ -24,6 +24,7 @@ class WisesController < ApplicationController
   # GET /wises/new
   # GET /wises/new.json
   def new
+    @user = User.new
     @wise = Wise.new
     @arregloSexo = ["masculino","femenino"]
     @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]

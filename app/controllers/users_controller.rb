@@ -46,12 +46,26 @@ class UsersController < InheritedResources::Base
   def create
     @guy =  params[:user][:guy];
 
+    if (@guy == "1")  
+      @wise = Wise.new
+    end
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        @entrepreneur = Entrepreneur.new(:user_id => @user.id)
-        @entrepreneur.save
-        format.html { redirect_to @user, :notice => 'User was successfully created.' }
+        
+        if (@guy == "2")
+          @entrepreneur = Entrepreneur.new(:user_id => @user.id)
+          @entrepreneur.save
+          message = 'entrepreneurs '
+        elsif (@guy =="1")
+          @wise = Wise.new(:user_id => @user.id)
+          @wise.save
+          message ='wise'
+        end
+          
+
+
+        format.html { redirect_to @user, :notice => 'User '+message+' was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
