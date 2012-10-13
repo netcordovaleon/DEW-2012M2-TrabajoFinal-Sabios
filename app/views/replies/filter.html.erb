@@ -14,13 +14,22 @@ respuestas sobre planes de negocio
     <th></th>
     <th></th>
   </tr>
-
+<% @entrepreneur =  Entrepreneur.find_by_user_id(current_user.id) %>
 <% @queries.each do |query| %>
+  <% if (query.entrepreneur_id == @entrepreneur.id ) %>
   <tr>
     <td><%= query.bussiness_plan_id %></td>
     <td><%= query.bussiness_plan.title %></td>
     <td><%= query.question %></td>
-    <td><%= link_to 'Show', query %></td>
+    <td>
+    <%if query.status == 2%>
+     <%@quer = query.id%>
+      <%= link_to 'Respuestas', add_book_reply_path(query.id) %>
+    <%else%>
+    	<%= " No atendido"%>
+    <%end%>	
+    </td>
   </tr>
+  <%end%>
 <% end %>
 </table>

@@ -1,20 +1,32 @@
 class RepliesController < ApplicationController
 
+
+def add_book
+#abort("bobobob");
+ @replies=Reply.where(:query_id => params[:id])
+ @query=Query.find(params[:id])
+ @busplan = BussinessPlan.find(@query.bussiness_plan_id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @replies }
+    end
+#@user = User.find(params[:id])
+end
+
 def filter
  #cargo mis preguntas
- #@queries = Query.find_by_entrepreneur_id(2)
-#@shows = Show.find(:all, :order => "date ASC, attending DESC")
- #@queries = Query.find (:all , :conditions => {:find_by_entrepreneur_id =>2 })
  @queries = Query.all
-# @cars = Car.find(:all, :conditions => { :in_production => #{params[:in_production]}, :year => #{params[:year]}, :make => #{params[:make]} })`
-
-
-#@shows = Show.find(:all, :order => "date")
 end
 
   # GET /replies
   # GET /replies.json
   def index
+      
+
+ #    @messages=Message.where(:name => params[:from])
+    
+    #abort("==ssssppp");
     @replies = Reply.all
 
     respond_to do |format|
@@ -26,6 +38,7 @@ end
   # GET /replies/1
   # GET /replies/1.json
   def show
+
     @reply = Reply.find(params[:id])
 
     respond_to do |format|
