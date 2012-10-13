@@ -1,0 +1,19 @@
+<h1>Lista de respuestas a tu pregunta sobre el plan de negocio : <%= @busplan.title %></h1>
+
+<table style="width:100%">
+  <tr>
+    <th>Query</th>
+    <th>Pregunta</th>
+    <th>Respuesta</th>
+  </tr>
+
+<% @replies.each do |reply| %>
+  <tr>
+    <td><%= reply.query_id %></td>
+    <td><%= reply.query.question %></td>
+    <td><%= reply.content %></td>
+     </tr>
+<% end %>
+</table>
+
+<br />
