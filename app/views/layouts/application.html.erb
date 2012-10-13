@@ -62,12 +62,17 @@
     <ul class="menu">
         <li><a href="#" onclick="javascript:alert('sin funcionalidad');" class="parent"><span>Pagina principal</span></a></li>
         <li><a href="#" class="parent"><span>Mantenimiento</span></a>
-            <ul><li><a href="/pcategories"><span>Categoria</span></a></li>
-                <li><a href="/categories"><span>Sub Categoria</span></a></li>
+            <ul>
+				<% if (current_user.guy)== 3 %>
+					<li><a href="/pcategories"><span>Categoria</span></a></li>
+					<li><a href="/categories"><span>Sub Categoria</span></a></li>
+					<li><a href="/entrepreneurs"><span>Emprendedores</span></a></li>
+					<li><a href="/wises"><span>Sabios</span></a></li>
+					<li><a href="/users"><span>Usuario</span></a></li>
+				<%end%>
+				
                 <li><a href="/bussiness_plans"><span>Planes de Negocio</span></a></li>
-				<li><a href="/entrepreneurs"><span>Emprendedores</span></a></li>
-				<li><a href="/wises"><span>Sabios</span></a></li>
-                <li><a href="/users"><span>Usuario</span></a></li>
+				
             </ul>
         </li>
         <li><a href="#" class="parent"><span>Procesos</span></a>
