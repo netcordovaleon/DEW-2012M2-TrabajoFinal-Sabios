@@ -7,8 +7,11 @@ DewFinal::Application.routes.draw do
 
   #match "change" => "bussiness_plan_mos#change_status"
 
-  resources :replies
-
+  resources :replies do
+   member do
+    get "add_book"
+   end
+  end
   resources :queries
 
   resources :pcategories
@@ -31,6 +34,10 @@ DewFinal::Application.routes.draw do
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+
+  match 'responses' =>'replies#filter', :as => :responses
+  #match 'responsesbyquery' =>'replies#responsebyquery', :as => :responsesbyquery
+ 
 
 
   # The priority is based upon order of creation:

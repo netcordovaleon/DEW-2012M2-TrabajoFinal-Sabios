@@ -3,6 +3,8 @@ class QueriesController < ApplicationController
   # GET /queries.json
   def index
     @queries = Query.all
+    #@wise = Wise.find_by_user_id(current_user.id)
+    #@queries = Query.find_by_wise_id(1);
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +16,7 @@ class QueriesController < ApplicationController
   # GET /queries/1.json
   def show
     @query = Query.find(params[:id])
-
+    @reply = Reply.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @query }
@@ -48,9 +50,10 @@ class QueriesController < ApplicationController
   # POST /queries
   # POST /queries.json
   def create
-    
+    @entrepreneur = Entrepreneur.find_by_user_id(current_user.id)
+
     #Los queries son creados unicamente por los emprendedores
-    params[:query][:entrepreneur_id] = 2 
+    params[:query][:entrepreneur_id] = @entrepreneur.id
     #El estado 1 significa que aun no esta respondido
     params[:query][:status] = 1
     #debo sacar el id de sabio del plan de negocio
