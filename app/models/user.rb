@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
- acts_as_authentic
+  acts_as_authentic
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable

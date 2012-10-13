@@ -1,14 +1,12 @@
-<h1>Listing sells</h1>
+<h1>Listado de Ventas</h1>
 
-<table>
+<table class="grilla" style="width:1000px;">
   <tr>
-    <th>Credir car</th>
-    <th>Date</th>
-    <th>Code</th>
-    <th>Address</th>
-    <th>Bussiness plan</th>
-    <th>Entrepreneur</th>
-    <th></th>
+    <th>Taejeta de Credito</th>
+    <th>Fecha</th>
+    <th>Direccion</th>
+    <th>Plan de negocio</th>
+    <th>Emprendedor</th>
     <th></th>
     <th></th>
   </tr>
@@ -17,17 +15,15 @@
   <tr>
     <td><%= sell.credir_car %></td>
     <td><%= sell.date %></td>
-    <td><%= sell.code %></td>
     <td><%= sell.address %></td>
-    <td><%= sell.bussiness_plan %></td>
-    <td><%= sell.entrepreneur %></td>
-    <td><%= link_to 'Show', sell %></td>
-    <td><%= link_to 'Edit', edit_sell_path(sell) %></td>
-    <td><%= link_to 'Destroy', sell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= sell.bussiness_plan.title %></td>
+    <td><%= sell.entrepreneur.user.firstname %>&nbsp;<%= sell.entrepreneur.user.lastname %></td>
+    <td><%= link_to 'Ver', sell %></td>
+    <td><%= link_to 'Eliminar', sell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Sell', new_sell_path %>
+<%= link_to 'Nueva venta', new_sell_path %>

@@ -4,8 +4,7 @@ class BussinessPlansController < ApplicationController
 
   def index
     if(current_user) 
-    @search = BussinessPlan.search(params[:search])   
-    @bussiness_plans = @search.all
+    @bussiness_plans = BussinessPlan.all
 
     respond_to do |format|
       format.html # index.html.erb

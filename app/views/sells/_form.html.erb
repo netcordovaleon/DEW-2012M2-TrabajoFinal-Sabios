@@ -1,3 +1,17 @@
+<script>
+	$(document).ready(function(){
+		$("#pagar").click(function(){
+				$("#pnlPasarela").toggle("slow");
+		});
+	});
+	
+		function validaDatosPasarela(){
+			if ($("#pasarelaTarjeta").val() == "") {alert("Debe ingresar datos en la autenticacion de Visa"); return false;}
+			if ($("#pasarelaPassword").val() == "") {alert("Debe ingresar datos en la autenticacion de Visa"); return false;}
+			if ($("#pasarelaCode").val() == "") {alert("Debe ingresar datos en la autenticacion de Visa"); return false;}
+		}
+</script>
+
 <%= form_for(@sell) do |f| %>
   <% if @sell.errors.any? %>
     <div id="error_explanation">
@@ -12,32 +26,52 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :credir_car %><br />
-    <%= f.text_field :credir_car, :class => "vacios" %>
+    <%= f.label :"Tarjeta de Credito" %><br />
+    <%= f.text_field :credir_car %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date, :class => "vacios" %>
+    <%= f.label :Fecha %><br />
+    <%= f.text_field :date, :value => Time.now %>
   </div>
   <div class="field">
-    <%= f.label :code %><br />
-    <%= f.text_field :code, :class => "vacios" %>
+    <%= f.label :Codigo %><br />
+    <%= f.text_field :code %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, :class => "vacios" %>
+    <%= f.label :Direccion %><br />
+    <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :bussiness_plan %><br />
-    <% # f.text_field :bussiness_plan %>
+    <%= f.label :"Seleccione Plan de negocio" %><br />
   <%= f.collection_select :bussiness_plan_id, BussinessPlan.all, :id, :title, :prompt => true %>
   </div>
   <div class="field">
-    <%= f.label :entrepreneur %><br />
-    <% # f.text_field :entrepreneur %>
-    <%= f.collection_select :entrepreneur_id, Entrepreneur.all, :id, :name, :prompt => true %>
+    <%= f.label :"Seleccione emprendedor" %><br />
+    <%= f.collection_select :entrepreneur_id, Entrepreneur.all, :id, :id, :prompt => true %>
   </div>
+  <div class="field">
+  	<input type="checkbox" id="pagar" name="pagar" />Mostrar pasarela Visa 
+  </div>
+  <div class="field" id="pnlPasarela" style="display:none;position:absolute;top:40%;left:33%;background:white;border:1px solid black;"> 
+  	<img src="../assets/visa.jpg" style="width:250px; height:130px;"/>
+	<table>
+	    <tr>
+			<td style="width:300px;">Ingrese su Nro tarjeta:</td>
+			<td><input type="text" value="" id="pasarelaTarjeta" name="pasarelaTarjeta" style="width:300px;" /></td>
+		</tr>
+		<tr>
+			<td style="width:300px;">Ingrese su contrase&ntildea</td>
+			<td><input type="password" value="" id="pasarelaPassword" name="pasarelaPassword" /></td>
+	    </tr>
+		<tr>
+			<td style="width:300px;">Ingrese Codigo secreto:</td>
+			<td><input type="text" value="" id="pasarelaCode" name="pasarelaCode" /></td>
+		</tr>
+	</table>
+  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Grabar", :onclick => "return validaDatosPasarela();" %>
   </div>
 <% end %>
+
