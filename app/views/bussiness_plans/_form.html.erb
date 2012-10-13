@@ -47,6 +47,11 @@
     <%= f.label :Estado %><br />
     <%= f.text_field :status, :readonly => true, :value=> "Inicial" %>
   </div>
+<%
+@wise = Wise.find_by_user_id(current_user.id)
+%>
+<%= hidden_field(:bussiness_plan, :wise_id , :value =>  @wise.id) %>  
+
   <div class="actions">
     <%= f.submit %>
   </div>

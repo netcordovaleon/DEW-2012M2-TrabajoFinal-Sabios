@@ -2,6 +2,7 @@ class WisesController < ApplicationController
   # GET /wises
   # GET /wises.json
   def index
+     
     @wises = Wise.all
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class WisesController < ApplicationController
   # GET /wises/new
   # GET /wises/new.json
   def new
+    @user = User.new
     @wise = Wise.new
     @arregloSexo = ["masculino","femenino"]
     @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
@@ -54,7 +56,9 @@ class WisesController < ApplicationController
                   :banck_account => params[:wise][:banck_account],
                   :bank => params[:wise][:bank],
                   :user_id => @user.id,
-                  :summary => params[:wise][:summary])
+                  :summary => params[:wise][:summary],
+                  :guy => 1 
+                  )
     respond_to do |format|
       if @wise.save
         format.html { redirect_to @wise, :notice => 'Wise was successfully created.' }

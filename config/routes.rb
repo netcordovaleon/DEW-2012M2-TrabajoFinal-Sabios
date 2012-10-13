@@ -1,5 +1,5 @@
 DewFinal::Application.routes.draw do
-  resources :sells
+  resources :sells ,:users, :user_sessions
 
   devise_for :users
 
@@ -25,7 +25,13 @@ DewFinal::Application.routes.draw do
 
   resources :categories
 
-  root :to => "bussiness_plans#index"
+  #root :to => "bussiness_plans#index"
+  
+  root :to => "user_sessions#index"
+
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,14 +1,18 @@
 class BussinessPlansController < ApplicationController
   # GET /bussiness_plans
   # GET /bussiness_plans.json
-  
+
   def index
+    if(current_user) 
     @bussiness_plans = BussinessPlan.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bussiness_plans }
     end
+  else
+    redirect_to user_sessions_url
+  end
   end
 
   # GET /bussiness_plans/1

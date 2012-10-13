@@ -1,9 +1,11 @@
-class UsersController < ApplicationController
+#class UsersController < ApplicationController
+class UsersController < InheritedResources::Base
+ 
+
   # GET /users
   # GET /users.json
   def index
     @users = User.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @users }
@@ -26,7 +28,8 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @user }
@@ -42,12 +45,37 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    abort("user die");
+    @guy =  params[:user][:guy];
+    @arregloSexo = ["masculino","femenino"]
+    @arregloTypeDoc = ["DNI","L.E","Carnet Univesitario"]
+    if (@guy == "1")  
+      @wise = Wise.new
+    end
     @user = User.new(params[:user])
-
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, :notice => 'User was successfully created.' }
+        
+        if (@guy == "2")
+          @entrepreneur = Entrepreneur.new(:user_id => @user.id)
+          @entrepreneur.save
+          message = 'entrepreneurs '
+          @redirect = @entrepreneur
+        elsif (@guy =="1")
+           @wise = Wise.new(:website => params[:wise][:website],
+                  :apellation => params[:wise][:apellation],
+                  :banck_account => params[:wise][:banck_account],
+                  :bank => params[:wise][:bank],
+                  :user_id => @user.id,
+                  :summary => params[:wise][:summary]
+                  )
+          @wise.save
+          message ='wise'
+          @redirect = @wise
+        end
+          
+
+
+        format.html { redirect_to @redirect, :notice => 'User '+ message +' was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }

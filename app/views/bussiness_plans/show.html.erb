@@ -49,5 +49,7 @@
 
 <%= link_to 'Editar', edit_bussiness_plan_path(@bussiness_plan) %>
 <%= link_to 'Regresar', bussiness_plans_path %>
-<%= link_to 'Question about this business plan',  new_query_path(@bussiness_plan.id) %>
+<%if(current_user.guy) == 2  %> <!--Si es un emprendedor tiene derecho a preguntar -->
+ <%= link_to 'Question about this business plan',  new_query_path(@bussiness_plan.id) %>
+<%end%>
 <%= link_to 'Volver a monitoreo', bussiness_plan_mos_path %>
