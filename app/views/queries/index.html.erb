@@ -2,32 +2,31 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Bussiness plan</th>
-    <th>Entrepreneur</th>
     <th>Question</th>
-    <th>Status</th>
-    <th>Bussiness plan</th>
     <th>Entrepreneur</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
+<% @wise = Wise.find_by_user_id(current_user.id) %>
 <% @queries.each do |query| %>
+  <% if  query.wise_id == @wise.id %>
   <tr>
     <td><%= query.bussiness_plan_id %></td>
-    <td><%= query.entrepreneur_id %></td>
+    <td><%= query.bussiness_plan.title %></td>
     <td><%= query.question %></td>
-    <td><%= query.status %></td>
-    <td><%= query.bussiness_plan %></td>
-    <td><%= query.entrepreneur %></td>
-    <td><%= link_to 'Show', query %></td>
-    <td><%= link_to 'Edit', edit_query_path(query) %></td>
-    <td><%= link_to 'Destroy', query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% @user = User.find_by_id(query.entrepreneur.user_id)%>
+    <td><%= @user.name+" "+@user.firstname %></td>
+    <td><%= link_to 'Responder', query %></td>
+    <!--<td><%= link_to 'Edit', edit_query_path(query) %></td>-->
+    <!-- <td><%= link_to 'Destroy', query, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
   </tr>
+  <%end%>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Query', new_query_path %>
