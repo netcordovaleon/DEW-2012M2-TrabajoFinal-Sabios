@@ -58,6 +58,7 @@ class UsersController < InheritedResources::Base
           @entrepreneur = Entrepreneur.new(:user_id => @user.id)
           @entrepreneur.save
           message = 'entrepreneurs '
+          @redirect = @entrepreneur
         elsif (@guy =="1")
            @wise = Wise.new(:website => params[:wise][:website],
                   :apellation => params[:wise][:apellation],
@@ -66,15 +67,14 @@ class UsersController < InheritedResources::Base
                   :user_id => @user.id,
                   :summary => params[:wise][:summary]
                   )
-
-          #@wise = Wise.new(:user_id => @user.id)
           @wise.save
           message ='wise'
+          @redirect = @wise
         end
           
 
 
-        format.html { redirect_to @user, :notice => 'User '+ message +' was successfully created.' }
+        format.html { redirect_to @redirect, :notice => 'User '+ message +' was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
