@@ -63,11 +63,39 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
     </div>
+
+
+<%=fields_for @wise do |ede| %><br />
+  <div class="field">
+    <%= ede.label :apellation %><br />
+    <%= ede.text_field :apellation %>
+  </div>
+  <div class="field">
+    <%= ede.label :summary %><br />
+    <%= ede.text_area :summary %>
+  </div>
+  <div class="field">
+    <%= ede.label :website %><br />
+    <%= ede.text_field :website %>
+  </div>
+  <div class="field">
+    <%= ede.label :bank %><br />
+    <%= ede.text_field :bank %>
+  </div>
+  <div class="field">
+    <%= ede.label :banck_account %><br />
+    <%= ede.text_field :banck_account %>
+  </div>
+<%end%>
+
+
+
+
+
+<%= hidden_field(:user, :guy , :value => "1") %>  
   <div class="actions">
     <%= f.submit %>
   </div>
-
-<%= hidden_field(:user, :guy , :value => "1") %>  
 <% end %>
 
 
